@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.73c3a40c.css",
-    "main.js": "/static/js/main.d62f958c.js",
+    "main.js": "/static/js/main.462f8266.js",
     "index.html": "/index.html",
     "static/media/EducationBall.svg": "/static/media/EducationBall.da345e327199bd4d4ce72bbe2a145398.svg",
     "static/media/ProjectBall.svg": "/static/media/ProjectBall.d9deed78b41f81a3e3b2b517e554deb2.svg",
     "static/media/SkillBall.svg": "/static/media/SkillBall.0e4d393006d56be1d6e657e6ff47d1a7.svg",
     "main.73c3a40c.css.map": "/static/css/main.73c3a40c.css.map",
-    "main.d62f958c.js.map": "/static/js/main.d62f958c.js.map"
+    "main.462f8266.js.map": "/static/js/main.462f8266.js.map"
   },
   "entrypoints": [
     "static/css/main.73c3a40c.css",
-    "static/js/main.d62f958c.js"
+    "static/js/main.462f8266.js"
   ]
 }
