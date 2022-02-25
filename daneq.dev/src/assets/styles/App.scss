@@ -1,0 +1,33 @@
+@import "./colors";
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: auto;
+}
+
+@mixin ball($size: 100px) {
+  height: $size;
+  width: $size;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.ball-25 {
+  @include ball(25px);
+  margin-right: 5px;
+}
+
+.ball-50 {
+  @include ball(50px);
+  margin-right: 2.5px;
+}
+
+.ball-100 {
+  @include ball;
+  margin-right: 10px;
+}
