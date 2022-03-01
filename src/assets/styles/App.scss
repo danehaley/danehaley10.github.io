@@ -1,11 +1,52 @@
 @import "./colors";
 
+// Elements
+h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
 header {
+  margin: 0px;
+  padding: 0px;
+  display: grid;
+  height: 110vh;
+  width: 100%;
+  align-content: center;
+  background-color: $header-background;
+}
+
+footer {
+  height: 25vh;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 95vh;
+}
+
+.tag {
+  padding: 5px;
+}
+
+@mixin category-article($cat-color) {
+  background-color: $cat-color;
+  color: black;
+  height: 120vh;
   width: auto;
+}
+
+@mixin ball-row($align: center) {
+  display: flex;
+  justify-content: $align;
 }
 
 @mixin ball($size: 100px) {
@@ -13,21 +54,82 @@ header {
   width: $size;
 }
 
-.no-margin {
-  margin: 0 !important;
+@mixin slide-pointer($size: 20px) {
+  height: $size;
+  width: auto;
+  margin-left: $size / 4;
+  margin-top: $size / 4;
+}
+
+@mixin slide-pointer-group($flexDirection: column, $pointerDirection: 0deg) {
+  display: flex;
+  flex-direction: $flexDirection;
+  transform: rotate($pointerDirection);
+}
+
+.category-article-skills {
+  @include category-article($skills-background);
+}
+
+.category-article-education {
+  @include category-article($education-background);
+}
+
+.category-article-projects {
+  @include category-article($projects-background);
 }
 
 .ball-25 {
   @include ball(25px);
-  margin-right: 5px;
+  margin-right: 2.5px;
 }
 
 .ball-50 {
   @include ball(50px);
-  margin-right: 2.5px;
+  margin-right: 5px;
 }
 
 .ball-100 {
   @include ball;
   margin-right: 10px;
+}
+
+.slide-pointer-15 {
+  @include slide-pointer(15px);
+}
+
+.slide-pointer-20 {
+  @include slide-pointer;
+}
+
+.slide-pointer-50 {
+  @include slide-pointer(50px);
+}
+
+.slide-pointer-group-down {
+  @include slide-pointer-group;
+}
+
+.slide-pointer-group-up {
+  @include slide-pointer-group(column, 180deg);
+}
+
+.slide-pointer-group-left {
+  @include slide-pointer-group(row, 90deg);
+}
+
+.slide-pointer-group-right {
+  @include slide-pointer-group(row, 270deg);
+}
+
+.ball-row-center {
+  @include ball_row;
+}
+
+.ball-row-left {
+  @include ball_row(flex-start);
+}
+
+.ball-row-right {
+  @include ball_row(flex-end);
 }
