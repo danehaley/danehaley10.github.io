@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.360dc94e.css",
-    "main.js": "/static/js/main.ae25e5ab.js",
+    "main.css": "/static/css/main.405c44d6.css",
+    "main.js": "/static/js/main.6563c98c.js",
     "index.html": "/index.html",
+    "static/media/BallStack.svg": "/static/media/BallStack.c83532bea631e341fc0f568ae5247685.svg",
     "static/media/SlideIndictatorRounded.svg": "/static/media/SlideIndictatorRounded.cb2e17609c93ba441791fcf43c7710c7.svg",
-    "static/media/EducationBall.svg": "/static/media/EducationBall.da345e327199bd4d4ce72bbe2a145398.svg",
-    "static/media/ProjectBall.svg": "/static/media/ProjectBall.d9deed78b41f81a3e3b2b517e554deb2.svg",
-    "static/media/SkillBall.svg": "/static/media/SkillBall.0e4d393006d56be1d6e657e6ff47d1a7.svg",
-    "main.360dc94e.css.map": "/static/css/main.360dc94e.css.map",
-    "main.ae25e5ab.js.map": "/static/js/main.ae25e5ab.js.map"
+    "static/media/Ball.svg": "/static/media/Ball.9fd3ef3e1d8e3bc0c9deda1005adc066.svg",
+    "main.405c44d6.css.map": "/static/css/main.405c44d6.css.map",
+    "main.6563c98c.js.map": "/static/js/main.6563c98c.js.map"
   },
   "entrypoints": [
-    "static/css/main.360dc94e.css",
-    "static/js/main.ae25e5ab.js"
+    "static/css/main.405c44d6.css",
+    "static/js/main.6563c98c.js"
   ]
 }
