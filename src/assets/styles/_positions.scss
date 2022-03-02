@@ -1,0 +1,29 @@
+.header-grid {
+  &-top-left {
+    grid-area: l-top;
+  }
+  &-top-center {
+    grid-area: top;
+  }
+  &-top-right {
+    grid-area: r-top;
+  }
+  &-mid-left {
+    grid-area: l-mid;
+  }
+  &-mid-center {
+    grid-area: mid;
+  }
+  &-mid-right {
+    grid-area: r-mid;
+  }
+  &-bot-left {
+    grid-area: l-bot;
+  }
+  &-bot-center {
+    grid-area: bot;
+  }
+  &-bot-right {
+    grid-area: r-bot;
+  }
+}

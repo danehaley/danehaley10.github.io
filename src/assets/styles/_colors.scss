@@ -3,9 +3,19 @@ $header-background: #f9f9f9;
 $main-background: #0d0c11;
 
 // Content Category
-$skills-background: #53438f;
+$experience: #f0a202;
 $skills: #53438f;
-$education-background: #48a9a6;
 $education: #48a9a6;
-$projects-background: #ee3057;
 $projects: #ee3057;
+
+$base-colors: (
+  experience: $experience,
+  skills: $skills,
+  education: $education,
+  projects: $projects,
+);
+
+$bg-colors: (
+  header: $header-background,
+  main: $main-background,
+);

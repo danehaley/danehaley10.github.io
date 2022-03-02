@@ -1,57 +1,142 @@
 @import "./colors";
+@import "./positions";
+@import "./animations";
+@import "./utilities";
+@use "sass:math";
 
 // Elements
-h1 {
+h1,
+h2,
+h3,
+h4,
+p,
+body,
+header,
+footer {
   margin: 0px;
   padding: 0px;
-}
-
-body {
-  padding: 0px;
-  margin: 0px;
 }
 
 header {
-  margin: 0px;
-  padding: 0px;
+  $header-height: 101vh;
+  $header-width: 100vw;
+  $grid-col-width: $header-width / 3;
+  $grid-row-height: $header-height / 3;
+  grid-template-columns: repeat(3, #{$grid-col-width});
+  grid-template-rows: repeat(3, #{$grid-row-height});
+  grid-template-areas:
+    "l-top top r-top"
+    "l-mid mid r-mid"
+    "l-bot bot r-bot";
+  height: $header-height;
+  width: $header-width;
   display: grid;
-  height: 110vh;
-  width: 100%;
   align-content: center;
   background-color: $header-background;
 }
 
 footer {
-  height: 25vh;
+  height: 10vh;
 }
 
-.no-margin {
-  margin: 0 !important;
+// Object Types
+@mixin category($name, $val, $count) {
+  .category-article-#{$name} {
+    background-color: $val;
+    color: black;
+    height: 120vh;
+    width: auto;
+  }
+  .category-#{$name} {
+    fill: $val;
+    z-index: $count;
+    &:hover {
+      fill: $val - 25;
+    }
+  }
 }
 
-.flex {
-  display: flex;
+$count: 10000;
+@each $name, $val in $base-colors {
+  @include category($name, $val, $count);
+  $count: $count - 1;
 }
 
-.tag {
-  padding: 5px;
-}
-
-@mixin category-article($cat-color) {
-  background-color: $cat-color;
-  color: black;
-  height: 120vh;
-  width: auto;
-}
-
-@mixin ball-row($align: center) {
-  display: flex;
-  justify-content: $align;
-}
-
+// Objects
 @mixin ball($size: 100px) {
   height: $size;
   width: $size;
+  margin-right: $size / 10;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ball {
+  &-25 {
+    @include ball(25px);
+  }
+  &-50 {
+    @include ball(50px);
+  }
+  &-100 {
+    @include ball(100px);
+  }
+}
+
+@mixin ball-row($align: center, $animated: false, $margin: false) {
+  display: flex;
+  justify-content: $align;
+  @if $animated & $margin {
+    &,
+    .ball-25 {
+      animation-name: example;
+      animation-duration: 2s;
+    }
+    .ball-50 {
+      animation-name: example;
+      animation-duration: 2s;
+    }
+    .ball-100 {
+      animation-name: example;
+      animation-duration: 2s;
+    }
+  } @else if $margin {
+    &,
+    .ball-25 {
+      margin: $margin / 4 !important;
+    }
+    .ball-50 {
+      margin: $margin / 2 !important;
+    }
+    .ball-100 {
+      margin: $margin !important;
+    }
+  }
+}
+
+.ball-row {
+  &-center {
+    @include ball_row(center);
+  }
+  &-center-animated {
+    @include ball_row(center, true, -25px);
+  }
+  &-center-stacked {
+    @include ball_row(center, false, -25px);
+  }
+  &-left {
+    @include ball_row(flex-start);
+  }
+  &-left-stacked {
+    @include ball_row(flex-start, false, -25px);
+  }
+  &-right {
+    @include ball_row(flex-end);
+  }
+  &-right-stacked {
+    @include ball_row(flex-end, false, -25px);
+  }
 }
 
 @mixin slide-pointer($size: 20px) {
@@ -61,75 +146,44 @@ footer {
   margin-top: $size / 4;
 }
 
-@mixin slide-pointer-group($flexDirection: column, $pointerDirection: 0deg) {
+.slide-pointer {
+  &-10 {
+    @include slide-pointer(10px);
+  }
+  &-20 {
+    @include slide-pointer;
+  }
+  &-50 {
+    @include slide-pointer(50px);
+  }
+}
+
+@mixin slide-pointer-group(
+  $flexDirection: column,
+  $pointerDirection: 0deg,
+  $margin: 5px
+) {
   display: flex;
   flex-direction: $flexDirection;
   transform: rotate($pointerDirection);
+  margin: $margin;
 }
 
-.category-article-skills {
-  @include category-article($skills-background);
+.slide-pointer-group {
+  &-down {
+    @include slide-pointer-group;
+  }
+  &-up {
+    @include slide-pointer-group(column, 180deg);
+  }
+  &-left {
+    @include slide-pointer-group(row, 90deg);
+  }
+  &-right {
+    @include slide-pointer-group(row, 270deg);
+  }
 }
 
-.category-article-education {
-  @include category-article($education-background);
-}
-
-.category-article-projects {
-  @include category-article($projects-background);
-}
-
-.ball-25 {
-  @include ball(25px);
-  margin-right: 2.5px;
-}
-
-.ball-50 {
-  @include ball(50px);
-  margin-right: 5px;
-}
-
-.ball-100 {
-  @include ball;
-  margin-right: 10px;
-}
-
-.slide-pointer-15 {
-  @include slide-pointer(15px);
-}
-
-.slide-pointer-20 {
-  @include slide-pointer;
-}
-
-.slide-pointer-50 {
-  @include slide-pointer(50px);
-}
-
-.slide-pointer-group-down {
-  @include slide-pointer-group;
-}
-
-.slide-pointer-group-up {
-  @include slide-pointer-group(column, 180deg);
-}
-
-.slide-pointer-group-left {
-  @include slide-pointer-group(row, 90deg);
-}
-
-.slide-pointer-group-right {
-  @include slide-pointer-group(row, 270deg);
-}
-
-.ball-row-center {
-  @include ball_row;
-}
-
-.ball-row-left {
-  @include ball_row(flex-start);
-}
-
-.ball-row-right {
-  @include ball_row(flex-end);
+.tag {
+  padding: 5px;
 }
