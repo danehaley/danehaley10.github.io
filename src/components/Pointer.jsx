@@ -1,13 +1,13 @@
 import React from "react";
-import SlideIndictator from "../assets/images/SlideIndictatorRounded.svg";
+import { ReactComponent as SlideIndictator } from "../assets/images/SlideIndictatorRounded.svg";
 
 function Pointer(direction, className = null, size = 10) {
   if (typeof direction === "string") {
     return (
       <div className={`slide-pointer-group-${direction} ${className}`}>
-        <img src={SlideIndictator} className={`slide-pointer-${size}`}></img>
-        <img src={SlideIndictator} className={`slide-pointer-${size}`}></img>
-        <img src={SlideIndictator} className={`slide-pointer-${size}`}></img>
+        <SlideIndictator className={`slide-pointer-${size}`}></SlideIndictator>
+        <SlideIndictator className={`slide-pointer-${size}`}></SlideIndictator>
+        <SlideIndictator className={`slide-pointer-${size}`}></SlideIndictator>
       </div>
     );
   } else {

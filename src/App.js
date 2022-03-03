@@ -1,8 +1,8 @@
 import { useContext, React, useRef } from "react";
 import "./assets/styles/App.scss";
 import { ReactComponent as Ball } from "./assets/images/Ball.svg";
-import BallStack from "./assets/images/BallStack.svg";
 import Pointer from "./components/Pointer";
+import SkillCard from "./components/SkillCard";
 import AppContext from "./contexts/AppContext";
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
     if (ref === "skills") {
       skillsRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (ref === "education") {
-      console.log("hi");
       educationRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (ref === "projects") {
       projectsRef.current.scrollIntoView({ behavior: "smooth" });
@@ -24,27 +23,33 @@ function App() {
     }
   };
 
+  const skillTags = (categoryArr) => {
+    return categoryArr.map((skill) => {
+      return <p className="tag" key={`${skill}`}>{`${skill}`}</p>;
+    });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <section className="ball-row-center header-grid-mid-center align-self-mid">
+        <section className="ball-row-center-animated header-grid-mid-center align-self-mid">
           <Ball
             alt="Purple ball representing skills."
-            className="category-skills ball-100"
+            className="category-skills ball-100 align-self-mid"
             onClick={() => {
               scrollToElement("skills");
             }}
           />
           <Ball
             alt="Green ball representing education."
-            className="category-education ball-100"
+            className="category-education ball-100 align-self-mid"
             onClick={() => {
               scrollToElement("education");
             }}
           ></Ball>
           <Ball
             alt="Red ball representing projects."
-            className="category-projects ball-100 no-margin"
+            className="category-projects ball-100 align-self-mid"
             onClick={() => {
               scrollToElement("projects");
             }}
@@ -55,25 +60,12 @@ function App() {
       <main>
         <article className="category-article-skills" ref={skillsRef}>
           <h1>Skills & Interests</h1>
-          <p>{context.skills.introduction}</p>
-          <h2>Languages</h2>
-          <div className="flex">
-            {context.skills.languages.map((language) => {
-              return <p className="tag">{`${language} `}</p>;
-            })}
-          </div>
-          <h2>Tools</h2>
-          <div className="flex">
-            {context.skills.tools.map((tool) => {
-              return <p className="tag">{`${tool} `}</p>;
-            })}
-          </div>
-          <h2>Miscellaneous</h2>
-          <div className="flex">
-            {context.skills.misc.map((m) => {
-              return <p className="tag">{`${m} `}</p>;
-            })}
-          </div>
+          <section className="card-row align-self-mid">
+            {SkillCard("Introduction", context.skills.introduction)}
+            {SkillCard("Languages", skillTags(context.skills.languages))}
+            {SkillCard("Tools", skillTags(context.skills.tools))}
+            {SkillCard("Miscellaneous", skillTags(context.skills.misc))}
+          </section>
         </article>
         <article className="category-article-education" ref={educationRef}>
           <h1>Education</h1>

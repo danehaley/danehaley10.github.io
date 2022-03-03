@@ -1,8 +1,46 @@
-@keyframes example {
-  to {
-    margin: 5px;
+@import "./sizings";
+
+@mixin unfold-row-animation($ball-size) {
+  @keyframes unfold-ball-row-#{$ball-size} {
+    0% {
+      margin-left: -#{$ball-size}px;
+    }
+
+    100% {
+      margin-left: #{$ball-size / 10}px;
+      @debug "divider offset: #{$ball-size / 10}px";
+    }
   }
-  from {
-    margin: -25px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
   }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+    top: 10px;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pointer-slide {
+  0% {
+    margin-top: 12.5px;
+  }
+  75% {
+    margin-top: 2.5px;
+  }
+  100% {
+    margin-top: 2.5px;
+  }
+}
+
+@each $name, $val in $ball-sizes {
+  @include unfold-row-animation($name);
 }
