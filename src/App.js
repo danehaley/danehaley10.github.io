@@ -1,133 +1,128 @@
 import { useContext, React, useRef } from "react";
 import "./assets/styles/App.scss";
-import { ReactComponent as Ball } from "./assets/images/Ball.svg";
 import Pointer from "./components/Pointer";
-import SkillCard from "./components/SkillCard";
+import { Card, EducationCard, ProjectsCard } from "./components/Cards";
+import CategoryArticle from "./components/CategoryArticle";
 import AppContext from "./contexts/AppContext";
+import ArrayToBulletedList from "./utils/ArrayToBulletedList";
+import BallGroup from "./components/BallGroup";
 
 function App() {
   const context = useContext(AppContext);
   const skillsRef = useRef(null);
   const educationRef = useRef(null);
   const projectsRef = useRef(null);
+  const refsArray = [skillsRef, educationRef, projectsRef];
 
-  const scrollToElement = (ref) => {
-    if (ref === "skills") {
-      skillsRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (ref === "education") {
-      educationRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (ref === "projects") {
-      projectsRef.current.scrollIntoView({ behavior: "smooth" });
-    } else {
-      throw new Error(`Input Ref ${ref} does not exist or is not a string`);
-    }
-  };
-
-  const skillTags = (categoryArr) => {
-    return categoryArr.map((skill) => {
-      return <p className="tag" key={`${skill}`}>{`${skill}`}</p>;
-    });
+  const educationText = () => {
+    return <div></div>;
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <section className="ball-row-center-animated header-grid-mid-center align-self-mid">
-          <Ball
-            alt="Purple ball representing skills."
-            className="category-skills ball-100 align-self-mid"
-            onClick={() => {
-              scrollToElement("skills");
-            }}
-          />
-          <Ball
-            alt="Green ball representing education."
-            className="category-education ball-100 align-self-mid"
-            onClick={() => {
-              scrollToElement("education");
-            }}
-          ></Ball>
-          <Ball
-            alt="Red ball representing projects."
-            className="category-projects ball-100 align-self-mid"
-            onClick={() => {
-              scrollToElement("projects");
-            }}
-          ></Ball>
-        </section>
+        <BallGroup
+          ballAlign="mid"
+          ballRowAlign="center"
+          ballSize={100}
+          animated={true}
+          otherClasses={"header-grid-mid-center"}
+          ref={refsArray}
+        />
         {Pointer("down", "header-grid-bot-center align-self-bot")}
       </header>
       <main>
-        <article className="category-article-skills" ref={skillsRef}>
-          <h1>Skills & Interests</h1>
-          <section className="card-row align-self-mid">
-            {SkillCard("Introduction", context.skills.introduction)}
-            {SkillCard("Languages", skillTags(context.skills.languages))}
-            {SkillCard("Tools", skillTags(context.skills.tools))}
-            {SkillCard("Miscellaneous", skillTags(context.skills.misc))}
-          </section>
-        </article>
-        <article className="category-article-education" ref={educationRef}>
-          <h1>Education</h1>
-          <h2>{`${context.education.degree}`}</h2>
-          <h3>{`${context.education.university}, ${context.education.location}`}</h3>
-          <h3>{`Major in ${context.education.major}`}</h3>
-          <h3>{`Minors in ${context.education.minors[0]} & ${context.education.minors[1]}`}</h3>
-          <p>{`${context.education.startDate} - ${context.education.endDate}`}</p>
-        </article>
-        <article className="category-article-projects" ref={projectsRef}>
-          <h1>Projects</h1>
-          {context.projects.map((project) => {
+        <CategoryArticle
+          category="Skills"
+          refsArray={refsArray}
+          ref={skillsRef}
+        >
+          <div className="card-row align-self-mid article-grid-mid">
+            <Card title="Introduction">
+              {context.categories.skills.introduction}
+            </Card>
+          </div>
+          <div className="card-row article-grid-bot-center">
+            <Card title="Languages">
+              {ArrayToBulletedList(context.categories.skills.languages)}
+            </Card>
+            <Card title="Tools">
+              {ArrayToBulletedList(context.categories.skills.tools)}
+            </Card>
+            <Card title="Miscellaneous">
+              {ArrayToBulletedList(context.categories.skills.misc)}
+            </Card>
+          </div>
+        </CategoryArticle>
+        <CategoryArticle
+          category="Education"
+          refsArray={[skillsRef, educationRef, projectsRef]}
+          ref={educationRef}
+        >
+          <div className="card-row align-self-mid article-grid-mid">
+            <Card title={"Education"} flex={false}>
+              <h2>{`${context.categories.education.degree}`}</h2>
+              <h3>{`${context.categories.education.university}, ${context.categories.education.location}`}</h3>
+              <h3>{`Major in ${context.categories.education.major}`}</h3>
+              <h3>{`Minors in ${context.categories.education.minors[0]} & ${context.categories.education.minors[1]}`}</h3>
+              <p>{`${context.categories.education.startDate} - ${context.categories.education.endDate}`}</p>
+            </Card>
+          </div>
+        </CategoryArticle>
+        <CategoryArticle
+          category="Projects"
+          refsArray={[skillsRef, educationRef, projectsRef]}
+          ref={projectsRef}
+        >
+          {context.categories.projects.map((project) => {
             return (
-              <div>
-                <div className="flex no-margin">
-                  <h2>{project.name}</h2>
-                  <h3>{project.subheading}</h3>
-                </div>
-                <h3>{project.technologies}</h3>
+              <Card
+                title={`${project.name}`}
+                linked={true}
+                linkedUrl={project.link}
+              >
+                <h3>{project.subheading}</h3>
+                <h4>
+                  {project.technologies.map((tech) => {
+                    const currentTechIndex = project.technologies.indexOf(tech);
+
+                    if (currentTechIndex !== project.technologies.length - 1) {
+                      return tech + ", ";
+                    } else if (
+                      currentTechIndex ===
+                      project.technologies.length - 1
+                    ) {
+                      return tech;
+                    } else {
+                      throw new Error(
+                        "Error with 'technologies' array, likely empty."
+                      );
+                    }
+                  })}
+                </h4>
                 <p>{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project.link}
-                </a>
-              </div>
+              </Card>
             );
           })}
-        </article>
+        </CategoryArticle>
       </main>
       <footer>
         <nav>
           <ul>
-            <div className="ball-row-left-stacked">
-              <Ball
-                alt="Purple ball representing skills."
-                className="category-skills ball-25"
-                onClick={() => {
-                  scrollToElement("skills");
-                }}
-              />
-              <Ball
-                alt="Green ball representing education."
-                className="category-education ball-25"
-                onClick={() => {
-                  scrollToElement("education");
-                }}
-              ></Ball>
-              <Ball
-                alt="Red ball representing projects."
-                className="category-projects ball-25 no-margin"
-                onClick={() => {
-                  scrollToElement("projects");
-                }}
-              ></Ball>
-            </div>
-            <h1 className="text-xs font-bold pl-1">Dane Dobra</h1>
+            <BallGroup
+              ballAlign="mid"
+              ballRowAlign="left"
+              ballSize={20}
+              static={true}
+              stacked={true}
+              ref={[skillsRef, educationRef, projectsRef]}
+            />
+            <h1 className="text-xs font-bold pl-1">{context.createdBy}</h1>
             <h3 className="text-xxs font-bold pl-1">
-              Copyright © {context.appYear} {context.createdBy}
+              Copyright © {context.appYear}
             </h3>
+            <h3>Created with React.js & SCSS</h3>
+            <h3>All assets designed and created by me!</h3>
             <h3 className="text-xxs font-bold pl-1">
               Contact at{" "}
               <a

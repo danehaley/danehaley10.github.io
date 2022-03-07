@@ -37,6 +37,7 @@ header {
 
 footer {
   height: 10vh;
+  font-size: 10px;
   background-color: $app_background;
 }
 
@@ -46,22 +47,30 @@ footer {
     display: grid;
     background-color: $val;
     color: black;
-    height: 115vh;
+    min-height: 115vh;
     width: auto;
     align-content: center;
     h1 {
-      justify-self: center;
-      align-self: flex-end;
+      text-align: center;
       height: fit-content;
       color: $app-background;
       margin-bottom: 1vh;
+      font-size: 18px;
+      &.article-title {
+        font-size: 36px;
+        margin-bottom: 24px;
+      }
     }
   }
+
   .category-#{$name} {
     fill: $val;
     z-index: $count;
     &:hover {
       fill: $val - 25;
+    }
+    &.selected {
+      fill: $app-background;
     }
   }
 }
@@ -77,19 +86,24 @@ $count: 10000;
   height: $size;
   width: $size;
   margin-left: $size / 10;
-  transition: height 0.5s ease-in-out, width 0.5s ease-in-out,
-    margin-bottom 0.5s ease-in-out;
+  transition: height 0.35s ease-in-out, width 0.35s ease-in-out,
+    margin-bottom 0.25s ease-in-out;
   &:hover {
     cursor: pointer;
     height: $size + ($size/3);
     width: $size + ($size/3);
     margin-bottom: 10px;
   }
+  &:hover.static {
+    height: $size;
+    width: $size;
+    margin-bottom: 0px;
+  }
 }
 
 .ball {
-  &-25 {
-    @include ball(25px);
+  &-20 {
+    @include ball(20px);
   }
   &-50 {
     @include ball(50px);
@@ -103,8 +117,8 @@ $count: 10000;
   display: flex;
   justify-content: $align;
   @if $animated {
-    & .ball-25 {
-      animation: unfold-ball-row-25 2s;
+    & .ball-20 {
+      animation: unfold-ball-row-20 2s;
       animation-timing-function: cubic-bezier(0.29, 0, 0, 0.8);
     }
     & .ball-50 {
@@ -117,11 +131,11 @@ $count: 10000;
     }
   } @else if $margin {
     &,
-    .ball-25 {
-      margin: $margin / 4 !important;
+    .ball-20 {
+      margin: $margin / 5;
     }
     .ball-50 {
-      margin: $margin / 2 !important;
+      margin: $margin / 2.5 !important;
     }
     .ball-100 {
       margin: $margin !important;
@@ -132,6 +146,9 @@ $count: 10000;
 .ball-row {
   &-center {
     @include ball_row(center);
+    &.margin {
+      margin: 1vh;
+    }
   }
   &-center-animated {
     @include ball_row(center, true);
@@ -144,6 +161,7 @@ $count: 10000;
   }
   &-left-stacked {
     @include ball_row(flex-start, false, -25px);
+    padding: 10px;
   }
   &-right {
     @include ball_row(flex-end);
@@ -208,15 +226,29 @@ $count: 10000;
   }
 }
 
-.card {
+.article-content {
+  display: inline-block;
+  overflow: hidden;
+}
+
+@mixin card {
   border-radius: 5vh;
   background-color: $app-background;
-  height: max-content;
   min-width: 20vw;
-  max-width: 80vw;
+  max-width: 68vw;
   padding: 25px;
+  margin-bottom: 1.6vh;
   @media screen and (max-width: 1000px) {
     width: 100%;
+  }
+}
+
+.card {
+  @include card;
+  &-full {
+    @include card;
+    width: 70vw;
+    max-width: 100vw;
   }
 }
 
@@ -224,6 +256,7 @@ $count: 10000;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
   gap: 1vw;
 }
 
