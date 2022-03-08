@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.6 26.73">
+    <defs>
+        <style>.cls-languages{fill:#231f20;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path class="cls-languages" d="M3.89,5H6.07a0,0,0,0,1,0,0v7.72a1,1,0,0,1-1,1H4.89a1,1,0,0,1-1-1V5a0,0,0,0,1,0,0Z" transform="translate(1.87 19.54) rotate(-135)" />
+            <path class="cls-languages" d="M4.12,10.88H5.3a0,0,0,0,1,0,0v9.89a1,1,0,0,1-1,1H4.12a1,1,0,0,1-1-1V11.88a1,1,0,0,1,1-1Z" transform="translate(-10.31 7.76) rotate(-45)" />
+            <rect class="cls-languages" x="13.34" y="-0.17" width="2.18" height="27.08" rx="1" transform="translate(26.32 29.04) rotate(-170)" />
+            <path class="cls-languages" d="M23.53,5.16h.18a1,1,0,0,1,1,1v7.72a0,0,0,0,1,0,0H22.53a0,0,0,0,1,0,0V6.16a1,1,0,0,1,1-1Z" transform="translate(0.19 19.49) rotate(-45)" />
+            <path class="cls-languages" d="M24.3,11h.18a1,1,0,0,1,1,1V21.9a0,0,0,0,1,0,0H24.3a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1Z" transform="translate(30 45.34) rotate(-135)" />
+        </g>
+    </g>
+</svg>
