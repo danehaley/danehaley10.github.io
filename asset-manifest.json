@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.28e2f2a5.css",
-    "main.js": "/static/js/main.67ad3dc2.js",
+    "main.css": "/static/css/main.7e4451d9.css",
+    "main.js": "/static/js/main.650ba0d4.js",
     "static/media/QUT.jpeg": "/static/media/QUT.c47e2df892da8e123f8f.jpeg",
-    "static/media/LanguagesIcon.svg": "/static/media/LanguagesIcon.1a04aaea3f36201af3967037069caaa6.svg",
+    "static/media/LanguagesIcon.svg": "/static/media/LanguagesIcon.c08104f6e0a5f74a57dc7953a0055026.svg",
     "index.html": "/index.html",
+    "static/media/ToolsIcon.svg": "/static/media/ToolsIcon.f9faa55a6ce21a3930f3423b5133a7f3.svg",
     "static/media/SlideIndictatorRounded.svg": "/static/media/SlideIndictatorRounded.715efe4a2a9f602c2a07f20431e109b2.svg",
     "static/media/Ball.svg": "/static/media/Ball.9fd3ef3e1d8e3bc0c9deda1005adc066.svg",
-    "main.28e2f2a5.css.map": "/static/css/main.28e2f2a5.css.map",
-    "main.67ad3dc2.js.map": "/static/js/main.67ad3dc2.js.map"
+    "main.7e4451d9.css.map": "/static/css/main.7e4451d9.css.map",
+    "main.650ba0d4.js.map": "/static/js/main.650ba0d4.js.map"
   },
   "entrypoints": [
-    "static/css/main.28e2f2a5.css",
-    "static/js/main.67ad3dc2.js"
+    "static/css/main.7e4451d9.css",
+    "static/js/main.650ba0d4.js"
   ]
 }
