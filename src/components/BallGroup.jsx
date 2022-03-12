@@ -23,7 +23,7 @@ const BallGroup = React.forwardRef((props, ref) => {
         props.animated.bool && !props.stacked ? `-animated` : ""
       }${
         props.stacked && !props.animated.bool ? "-stacked" : ""
-      } align-self-mid ${props.otherClasses}`}
+      } align-self-mid ${props.otherClasses} ${props.mini ? "mini" : ""}`}
     >
       <Ball
         alt="Purple ball representing skills."

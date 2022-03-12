@@ -14,8 +14,9 @@ const CategoryArticle = React.forwardRef((props, ref) => {
             ballRowAlign="center"
             ballSize={20}
             static={true}
-            ref={props.refsArray}
             selected={props.category}
+            mini={true}
+            ref={props.refsArray}
           />
           <h1 className="article-title">{props.category}</h1>
         </div>

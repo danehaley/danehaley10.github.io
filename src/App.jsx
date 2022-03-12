@@ -143,12 +143,12 @@ function App() {
               ref={[skillsRef, educationRef, projectsRef]}
             />
             <h1 className="text-xs font-bold pl-1">{context.createdBy}</h1>
-            <h3 className="text-xxs font-bold pl-1">
+            <p className="text-xxs font-bold pl-1">
               Copyright © {context.appYear}
-            </h3>
-            <h3>Created with React.js & SCSS</h3>
-            <h3>All assets designed and created by me!</h3>
-            <h3 className="text-xxs font-bold pl-1">
+            </p>
+            <p>Created with React.js & SCSS</p>
+            <p>All assets designed and created by me!</p>
+            <p className="text-xxs font-bold pl-1">
               Contact at{" "}
               <a
                 className="hover:underline"
@@ -156,7 +156,7 @@ function App() {
               >
                 {context.createdByEmail}
               </a>
-            </h3>
+            </p>
           </ul>
         </nav>
       </footer>
