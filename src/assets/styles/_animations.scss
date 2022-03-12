@@ -41,6 +41,15 @@
   }
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @each $name, $val in $ball-sizes {
   @include unfold-row-animation($name);
 }

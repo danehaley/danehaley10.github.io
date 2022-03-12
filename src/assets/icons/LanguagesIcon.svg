@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.96 26.91">
+    <defs>
+        <style>.language-icon{fill:#231f20;}</style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path class="LanguagesIcon" d="M4.46,5.35H7.55a0,0,0,0,1,0,0v7.72a1,1,0,0,1-1,1H5.46a1,1,0,0,1-1-1V5.35A0,0,0,0,1,4.46,5.35Z" transform="translate(3.39 20.81) rotate(-135)" />
+            <path class="LanguagesIcon" d="M4.29,11.1H6.47a0,0,0,0,1,0,0V21.9a1,1,0,0,1-1,1H4.29a1,1,0,0,1-1-1V12.1a1,1,0,0,1,1-1Z" transform="translate(-10.59 8.43) rotate(-45)" />
+            <rect class="LanguagesIcon" x="13.41" y="-0.09" width="3.18" height="27.08" rx="1" transform="translate(27.43 29.31) rotate(-170)" />
+            <path class="LanguagesIcon" d="M23.44,5.48h1.11a1,1,0,0,1,1,1V14.2a0,0,0,0,1,0,0H22.44a0,0,0,0,1,0,0V6.48a1,1,0,0,1,1-1Z" transform="translate(0.07 19.85) rotate(-45)" />
+            <path class="LanguagesIcon" d="M24.52,11.19h1.11a1,1,0,0,1,1,1V23.08a0,0,0,0,1,0,0H24.52a1,1,0,0,1-1-1V12.19a1,1,0,0,1,1-1Z" transform="translate(30.68 46.98) rotate(-135)" />
+        </g>
+    </g>
+</svg>

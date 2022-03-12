@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.86 28.86">
+    <defs>
+        <style>.d{fill:#231f20;}</style>
+    </defs>
+    <g id="a" />
+    <g id="b">
+        <g id="c">
+            <g>
+                <rect class="d" x="20.17" y="4.36" width="4.48" height="1.69" rx=".84" ry=".84" />
+                <rect class="d" x="3.92" y="4.36" width="2.24" height="1.69" rx=".84" ry=".84" />
+                <g>
+                    <path class="d" d="M26.86,0H2C.9,0,0,.9,0,2V26.86c0,1.1,.9,2,2,2H26.86c1.1,0,2-.9,2-2V2c0-1.1-.9-2-2-2Zm-8.47,25.86H2.88V9.33h15.51V25.86Zm7.57,0h-5.71V9.33h5.71V25.86Zm0-18.24H2.88V2.78H25.96V7.62Z" />
+                    <rect class="d" x="7.12" y="4.36" width="2.24" height="1.69" rx=".84" ry=".84" />
+                    <rect class="d" x="3.92" y="10.53" width="13.21" height="1.69" rx=".84" ry=".84" />
+                    <rect class="d" x="3.92" y="12.95" width="10.87" height="1.69" rx=".84" ry=".84" />
+                    <rect class="d" x="3.92" y="15.28" width="10.87" height="1.69" rx=".84" ry=".84" />
+                    <rect class="d" x="3.92" y="17.7" width="13.21" height="1.69" rx=".84" ry=".84" />
+                    <rect class="d" x="4.03" y="20.05" width="7.03" height="1.69" rx=".84" ry=".84" />
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

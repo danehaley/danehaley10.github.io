@@ -1,5 +1,14 @@
 .flex {
   display: flex;
+  &-over {
+    &-1000 {
+      display: flex;
+      @media screen and (max-width: 768px) {
+        display: grid !important;
+        grid-template-rows: 20vh auto;
+      }
+    }
+  }
 }
 
 .flex-wrap {

@@ -2,7 +2,7 @@ const ArrayToBulletedList = (arr) => {
   return (
     <ul>
       {arr.map((elm) => {
-        return <li className="tag" key={elm}>{`${elm}`}</li>;
+        return <li className="bullet" key={elm}>{`${elm}`}</li>;
       })}
     </ul>
   );

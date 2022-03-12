@@ -15,6 +15,7 @@ const CategoryArticle = React.forwardRef((props, ref) => {
             ballSize={20}
             static={true}
             ref={props.refsArray}
+            selected={props.category}
           />
           <h1 className="article-title">{props.category}</h1>
         </div>

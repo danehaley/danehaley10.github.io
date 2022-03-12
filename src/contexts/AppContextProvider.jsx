@@ -1,6 +1,9 @@
 import React from "react";
 import AppContext from "./AppContext";
 
+import ArtikelerLogo from "../assets/images/artikeler-black-250x.png";
+import PawlerLogo from "../assets/images/pawler-logoonly-brandcolor.png";
+
 const dateToday = new Date();
 const input = {
   appUrl: "danehaley10.github.io",
@@ -55,6 +58,7 @@ const input = {
     projects: [
       {
         name: "Artikeler",
+        logo: ArtikelerLogo,
         status: "Offline",
         subheading: "Interactive article aggregator",
         technologies: ["React.js", "Chakra UI", "Express.js", "AWS"],
@@ -65,6 +69,7 @@ const input = {
       },
       {
         name: "Pawler",
+        logo: PawlerLogo,
         status: "WIP",
         subheading: "Smart pet adoption service",
         technologies: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
