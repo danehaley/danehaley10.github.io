@@ -70,9 +70,10 @@ function App() {
                 <img src={QUTLogo} id="qut-logo"></img>
                 <div>
                   <h2>{`${context.categories.education.degree}`}</h2>
-                  <h3>{`${context.categories.education.university}, ${context.categories.education.location}`}</h3>
-                  <h3>{`Major in ${context.categories.education.major}`}</h3>
-                  <h3>{`Minors in ${context.categories.education.minors[0]} & ${context.categories.education.minors[1]}`}</h3>
+                  <h3></h3>{`${context.categories.education.university}`}</h3>
+                  <h4>{`${context.categories.education.location}`}</h4>
+                  <p>{`Major in ${context.categories.education.major}`}</p>
+                  <p>{`Minors in ${context.categories.education.minors[0]} & ${context.categories.education.minors[1]}`}</p>
                   <p>{`${context.categories.education.startDate} - ${context.categories.education.endDate}`}</p>
                 </div>
               </div>
@@ -91,11 +92,13 @@ function App() {
                   title={`${project.name}`}
                   linked={true}
                   linkedUrl={project.link}
+                  customTitle={true}
                   className={"card-full"}
                 >
                   <div className="flex-over-1000">
                     <img src={project.logo} id="qut-logo"></img>
                     <div>
+                      <h2>{project.name}</h2>
                       <h3>{project.subheading}</h3>
                       <h4>
                         {project.technologies.map((tech) => {

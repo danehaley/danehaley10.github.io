@@ -61,9 +61,9 @@ const input = {
         logo: ArtikelerLogo,
         status: "Offline",
         subheading: "Interactive article aggregator",
-        technologies: ["React.js", "Chakra UI", "Express.js", "AWS"],
+        technologies: ["React.js", "Chakra UI", "Express.js", "Docker", "AWS"],
         description:
-          "A web app completed for a “Cloud Computing” class that aggregates articles from several news APIs and performs natural language processing for keyword extraction and sentiment analysis. Keywords and sentiment were then displayed on the articles as “tags” that are used to interactively filter articles in order to promote discovery.  Using docker, this app was hosted on AWS using EC2 auto-scaling with persistence via Redis and AWS S3.",
+          "A web app that aggregates articles from news APIs and performs natural language processing to get keywords and sentiment (i.e. negative, positive) then displays it on the articles as “tags” that are used to interactively filter articles and promote article discovery.",
         link: "https://github.com/danehaley10/Artikeler",
         screenshots: [],
       },
@@ -74,7 +74,7 @@ const input = {
         subheading: "Smart pet adoption service",
         technologies: ["Next.js", "Tailwind CSS", "Prisma", "PostgreSQL"],
         description:
-          "A web app that would present adoption listings from several adoption agencies, with the aim of increasing visibility and ensuring pets go to the right home. To achieve the latter, it’s hoped to implement an AI (GPT3) powered recommendation system that recommends listings based on the preferences and characteristics of the prospective adoptee.",
+          "A web app that will host adoption listings from adoption agencies, with the aim of increasing visibility and ensuring pets go to the right home. To achieve the latter, it’s hoped to implement an AI (GPT3) powered recommendation system that recommends listings based on the preferences and characteristics of the prospective adoptee.",
         link: "https://github.com/danehaley10/Pawler",
         screenshots: [],
       },
