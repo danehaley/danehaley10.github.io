@@ -70,7 +70,7 @@ function App() {
                 <img src={QUTLogo} id="qut-logo"></img>
                 <div>
                   <h2>{`${context.categories.education.degree}`}</h2>
-                  <h3></h3>{`${context.categories.education.university}`}</h3>
+                  <h3>{`${context.categories.education.university}`}</h3>
                   <h4>{`${context.categories.education.location}`}</h4>
                   <p>{`Major in ${context.categories.education.major}`}</p>
                   <p>{`Minors in ${context.categories.education.minors[0]} & ${context.categories.education.minors[1]}`}</p>
