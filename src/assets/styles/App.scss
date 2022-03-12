@@ -63,6 +63,9 @@ footer {
   background-color: $app_background;
   & nav {
     justify-self: center;
+    & ul {
+      list-style-type: none;
+    }
   }
 }
 
@@ -318,16 +321,16 @@ $count: 10000;
   margin-right: 7.5px;
 }
 
-#qut-logo {
-  max-width: 120px;
-  max-height: 120px;
+#logo {
+  width: 120px;
+  height: 120px;
   margin: 6px;
   margin-right: 18px;
   @media screen and (max-width: 768px) {
     justify-self: center;
     align-self: center;
-    max-width: 80%;
-    max-height: 80%;
+    width: 120px;
+    height: 120px;
     margin: 4px;
   }
 }

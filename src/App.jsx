@@ -1,6 +1,6 @@
 import { useContext, React, useRef, useState } from "react";
 import "./assets/styles/App.scss";
-import QUTLogo from "./assets/images/QUT.jpeg";
+import QUTLogo from "./assets/images/QUT.gif";
 import useWindowDimensions from "./utils/WindowDimensions";
 import Pointer from "./components/Pointer";
 import { Card } from "./components/Card";
@@ -16,7 +16,7 @@ function App() {
   const projectsRef = useRef(null);
   const refsArray = [skillsRef, educationRef, projectsRef];
   const [ballHover, setBallHover] = useState(false);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <div className="App">
@@ -71,7 +71,7 @@ function App() {
                 <img
                   src={QUTLogo}
                   alt="The logo of Queensland University of Technology. Dark blue background with decorative Sans Serif Fontface that reads QUT"
-                  id="qut-logo"
+                  id="logo"
                 ></img>
                 <div>
                   {width < 600 ? (
@@ -103,9 +103,14 @@ function App() {
                   linkedUrl={project.link}
                   customTitle={true}
                   className={"card-full"}
+                  key={project.name}
                 >
                   <div className="flex-over-1000">
-                    <img src={project.logo} id="qut-logo"></img>
+                    <img
+                      src={project.logo}
+                      alt={`The logo of ${project.name}`}
+                      id="logo"
+                    ></img>
                     <div>
                       <h2>{project.name}</h2>
                       <h3>{project.subheading}</h3>
@@ -143,29 +148,31 @@ function App() {
       <footer>
         <nav>
           <ul>
-            <BallGroup
-              ballAlign="mid"
-              ballRowAlign="left"
-              ballSize={20}
-              static={true}
-              stacked={true}
-              ref={[skillsRef, educationRef, projectsRef]}
-            />
-            <h1 className="text-xs font-bold pl-1">{context.createdBy}</h1>
-            <p className="text-xxs font-bold pl-1">
-              Copyright © {context.appYear}
-            </p>
-            <p>Created with React.js & SCSS</p>
-            <p>All assets designed and created by me!</p>
-            <p className="text-xxs font-bold pl-1">
-              Contact at{" "}
-              <a
-                className="hover:underline"
-                href={`mailto:${context.createdByEmail}`}
-              >
-                {context.createdByEmail}
-              </a>
-            </p>
+            <li>
+              <BallGroup
+                ballAlign="mid"
+                ballRowAlign="left"
+                ballSize={20}
+                static={true}
+                stacked={true}
+                ref={[skillsRef, educationRef, projectsRef]}
+              />
+              <h1 className="text-xs font-bold pl-1">{context.createdBy}</h1>
+              <p className="text-xxs font-bold pl-1">
+                Copyright © {context.appYear}
+              </p>
+              <p>Created with React.js & SCSS</p>
+              <p>All assets designed and created by me!</p>
+              <p className="text-xxs font-bold pl-1">
+                Contact at{" "}
+                <a
+                  className="hover:underline"
+                  href={`mailto:${context.createdByEmail}`}
+                >
+                  {context.createdByEmail}
+                </a>
+              </p>
+            </li>
           </ul>
         </nav>
       </footer>

@@ -77,7 +77,7 @@ const BallGroup = React.forwardRef((props, ref) => {
 BallGroup.propTypes = {
   ballRowAlign: PropTypes.string,
   ballSize: PropTypes.number,
-  animated: PropTypes.bool,
+  animated: PropTypes.object,
   stacked: PropTypes.bool,
   static: PropTypes.bool,
   otherClasses: PropTypes.string,
