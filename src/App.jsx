@@ -1,7 +1,7 @@
 import { useContext, React, useRef, useState } from "react";
 import "./assets/styles/App.scss";
 import QUTLogo from "./assets/images/QUT.jpeg";
-import ArtikelerLogo from "./assets/images/artikeler-black-250x.png";
+import useWindowDimensions from "./utils/WindowDimensions";
 import Pointer from "./components/Pointer";
 import { Card } from "./components/Card";
 import CategoryArticle from "./components/CategoryArticle";
@@ -16,6 +16,7 @@ function App() {
   const projectsRef = useRef(null);
   const refsArray = [skillsRef, educationRef, projectsRef];
   const [ballHover, setBallHover] = useState(false);
+  const { height, width } = useWindowDimensions();
 
   return (
     <div className="App">
@@ -67,13 +68,21 @@ function App() {
               className={"card-full"}
             >
               <div className="flex-over-1000">
-                <img src={QUTLogo} id="qut-logo"></img>
+                <img
+                  src={QUTLogo}
+                  alt="The logo of Queensland University of Technology. Dark blue background with decorative Sans Serif Fontface that reads QUT"
+                  id="qut-logo"
+                ></img>
                 <div>
-                  <h2>{`${context.categories.education.degree}`}</h2>
+                  {width < 600 ? (
+                    <h2>{`${context.categories.education.shortenedDegree}`}</h2>
+                  ) : (
+                    <h2>{`${context.categories.education.degree}`}</h2>
+                  )}
                   <h3>{`${context.categories.education.university}`}</h3>
                   <h4>{`${context.categories.education.location}`}</h4>
-                  <p>{`Major in ${context.categories.education.major}`}</p>
-                  <p>{`Minors in ${context.categories.education.minors[0]} & ${context.categories.education.minors[1]}`}</p>
+                  <p className="m-t-4">{`Major in ${context.categories.education.major}`}</p>
+                  <p>{`Minors in ${context.categories.education.minors[0]} and ${context.categories.education.minors[1]}`}</p>
                   <p>{`${context.categories.education.startDate} - ${context.categories.education.endDate}`}</p>
                 </div>
               </div>
@@ -122,7 +131,7 @@ function App() {
                           }
                         })}
                       </h4>
-                      <p>{project.description}</p>
+                      <p className="m-t-6">{project.description}</p>
                     </div>
                   </div>
                 </Card>

@@ -75,6 +75,16 @@ footer {
     min-height: 115vh;
     width: auto;
     align-content: center;
+    @media screen and (max-width: 1000px) {
+      font-size: smaller;
+      height: fit-content;
+      @if $name != education {
+        padding-bottom: 70px;
+        padding-top: 70px;
+      } @else {
+        min-height: none;
+      }
+    }
     h1 {
       text-align: center;
       height: fit-content;
@@ -96,10 +106,10 @@ footer {
       fill: $val - 25;
     }
     &.selected {
-      fill: $val - 25;
+      fill: $val - 35;
 
       &:hover {
-        fill: $val - 50;
+        fill: $val - 70;
       }
     }
   }
@@ -295,7 +305,7 @@ $count: 10000;
 }
 
 .bullet {
-  margin: 10px;
+  margin: 8px;
 }
 
 .icon {

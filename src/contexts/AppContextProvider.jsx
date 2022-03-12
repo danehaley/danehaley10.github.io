@@ -14,23 +14,22 @@ const input = {
   categories: {
     skills: {
       introduction:
-        "Hello, I'm Dane! I'm a student developer who is currently specializing in full-stack web development. Although I am really quite interested in everything from systems programming to app development. Some of my interests outside of programming include music production (especially synthesizers), art design, and tinkering with hardware.",
+        "Hello, I'm Dane! I'm a student developer who is currently specializing in web development. Although I am really quite interested in everything from systems programming to app development. Some of my interests outside of programming include music production (especially synthesizers), art design, and tinkering with hardware.",
       languages: [
         "JavaScript",
         "HTML",
         "CSS / SCSS",
         "Python",
-        "SQL",
         "C",
         "C#",
-        "Java",
+        "SQL",
       ],
       tools: [
         "React.js",
         "Next.js",
         "Node.js",
         "Express.js",
-        "Django",
+        "Flask",
         "Prisma",
       ],
       misc: [
@@ -49,6 +48,7 @@ const input = {
       university: "Queensland University of Technology (QUT)",
       location: "Brisbane, Australia",
       degree: "Bachelor of Information Technology",
+      shortenedDegree: "Bachelor of IT",
       major: "Computer Science",
       minors: ["User Experience (UX)", "Network & Security"],
       gpa: 5.47,
