@@ -9,7 +9,7 @@ const input = {
   appUrl: "danehaley10.github.io",
   appYear: dateToday.getFullYear(),
   appTech: ["React.js", "SASS", "Docker"],
-  createdBy: "Dane Dobra",
+  createdBy: "Dane Haley",
   createdByEmail: "danehaley22@gmail.com",
   categories: {
     skills: {
