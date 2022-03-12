@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e4451d9.css",
-    "main.js": "/static/js/main.650ba0d4.js",
+    "main.css": "/static/css/main.1ed69805.css",
+    "main.js": "/static/js/main.fccc5eb6.js",
     "static/media/QUT.jpeg": "/static/media/QUT.c47e2df892da8e123f8f.jpeg",
+    "static/media/pawler-logoonly-brandcolor.png": "/static/media/pawler-logoonly-brandcolor.55a41cc7fdde2761c174.png",
+    "static/media/IntroductionIcon.svg": "/static/media/IntroductionIcon.0a4b147098bdb0765b930da219bdb896.svg",
+    "static/media/ToolsIcon.svg": "/static/media/ToolsIcon.45de54d2944da5eefae2b4b7ba13dcab.svg",
+    "static/media/MiscellaneousIcon.svg": "/static/media/MiscellaneousIcon.af91e96439c5c0b03395fb79541d9f15.svg",
     "static/media/LanguagesIcon.svg": "/static/media/LanguagesIcon.c08104f6e0a5f74a57dc7953a0055026.svg",
     "index.html": "/index.html",
-    "static/media/ToolsIcon.svg": "/static/media/ToolsIcon.f9faa55a6ce21a3930f3423b5133a7f3.svg",
     "static/media/SlideIndictatorRounded.svg": "/static/media/SlideIndictatorRounded.715efe4a2a9f602c2a07f20431e109b2.svg",
     "static/media/Ball.svg": "/static/media/Ball.9fd3ef3e1d8e3bc0c9deda1005adc066.svg",
-    "main.7e4451d9.css.map": "/static/css/main.7e4451d9.css.map",
-    "main.650ba0d4.js.map": "/static/js/main.650ba0d4.js.map"
+    "main.1ed69805.css.map": "/static/css/main.1ed69805.css.map",
+    "main.fccc5eb6.js.map": "/static/js/main.fccc5eb6.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e4451d9.css",
-    "static/js/main.650ba0d4.js"
+    "static/css/main.1ed69805.css",
+    "static/js/main.fccc5eb6.js"
   ]
 }
