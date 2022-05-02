@@ -1,0 +1,62 @@
+@import "helpers";
+
+$font-path: "../assets/fonts/";
+
+@font-face {
+  font-family: "Sequel Sans";
+  src: url("#{$font-path}/SequelSans/SequelSansBoldDisp.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Sequel Sans";
+  src: url("#{$font-path}/SequelSans/SequelSansLightDisp.ttf");
+  font-weight: 100;
+}
+
+h1 {
+  font-family: "Sequel Sans";
+  font-weight: bold;
+  font-size: 48px;
+  margin: 0px;
+}
+
+h2 {
+  font-family: "Sequel Sans";
+  font-weight: 100;
+  font-size: 24px;
+  letter-spacing: 5px;
+  margin: 0px;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto, 4);
+  grid-template-rows: repeat(auto, 4);
+  gap: 2px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto, 4);
+  gap: 2px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  justify-items: center;
+  img {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+    align-self: flex-end;
+  }
+  .text-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+}
