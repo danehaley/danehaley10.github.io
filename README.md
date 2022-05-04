@@ -5,7 +5,7 @@ A portfolio website made with React & SCSS - hosted via github pages at [danehal
 ## Home
 The homepage of the website contains decorative media, as well as a link navigation bar to navigate through the different sections of the site.
 
-![Homepage from the website](src/markdown/home-markdown.png)
+![Homepage from the website](src/markdown/homepage-markdown.png)
 
 ## Skills
 
