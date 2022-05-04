@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="75" viewBox="0 0 250 75">
+    <defs>
+        <style>.a{font-size:48px;font-family:SequelSans-BoldDisp, Sequel Sans;font-weight:700;}.b{font-size:24px;font-family:SequelSans-LightDisp, Sequel Sans;font-weight:300;letter-spacing:0.232em;}</style>
+    </defs>
+    <text class="a" transform="translate(0 47)">
+        <tspan x="0" y="0">Dane Haley</tspan>
+    </text>
+    <text class="b" transform="translate(1 70)">
+        <tspan x="0" y="0">Web Developer</tspan>
+    </text>
+</svg>

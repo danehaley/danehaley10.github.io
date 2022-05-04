@@ -6,3 +6,11 @@
   }
   @return $res;
 }
+
+.margin{
+  &-l{
+    &-10{
+      margin-left:10px;
+    }
+  }
+}
