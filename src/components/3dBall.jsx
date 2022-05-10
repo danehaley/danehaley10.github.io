@@ -7,7 +7,7 @@ export default function Ball() {
       <MeshDistortMaterial
         color="white"
         attach="material"
-        distort={0.3}
+        distort={0.4}
         speed={1}
         roughness={0.8}
       />

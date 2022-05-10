@@ -29,7 +29,7 @@ body {
 #root {
 }
 
-.grid-container {
+.container {
   height: 100vh;
   width: 100vw;
   display: grid;
@@ -38,53 +38,18 @@ body {
   overflow: hidden;
 }
 
-.link-container{
-  font-size: 18px;
-  font-family: sans-serif;
-  grid-column-start: 7;
-  justify-self: flex-end;
-  grid-row-start: 2;
-  p:hover{
-    cursor: pointer;
+.frontpage-media{
+  position: absolute;
+  left: 10vw;
+  bottom: 4vh;
+  .images img{
+    width:20vw;
   }
-}
-
-.media-container{
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 4;
-  grid-row-end: 8;
-  justify-items: center;
-  justify-content: center;
-  justify-self: center;
-  display:block;
-  width: auto; /* this is must */
-  height: auto;
-  margin-bottom: 5%;
-  .canvas{
-    margin-left: -5%;
+  .images #tree{
+    width:9vw !important;
+    padding-left: 0.7vh;
   }
-  .images{
-    display: flex;
-    overflow:visible;
-    .full-image{
-      width: 50%;
-      @media (max-width:425px){
-        width: 85%;
-      }
-    }
-    .shorter-image{
-      align-self: flex-end;
-      width: 20%;
-      height: 10%;
-      @media (max-width:425px){
-        width: 29%;
-        height: 10%;
-      }
-    }
-    
-  }
-  .text{
+  .headings{
     padding-left: 25%;
     h1 {
       font-family: "Sequel Sans";
@@ -134,6 +99,23 @@ body {
       line-height: 10px;
       margin: 0px;
     }
+  }
+}
+
+.link-container{
+  @media (max-width:2560px){
+    font-size: 20xpx;
+  }
+  @media (max-width:1440px){
+    font-size: 20px;
+  }
+  font-size: 18px;
+  font-family: sans-serif;
+  grid-column-start: 7;
+  justify-self: flex-end;
+  grid-row-start: 2;
+  p:hover{
+    cursor: pointer;
   }
 }
 
