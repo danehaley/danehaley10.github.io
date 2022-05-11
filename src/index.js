@@ -1,10 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Welcome from "./pages/welcome";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Skills from "./pages/skills";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Welcome />
-  </React.StrictMode>,
-  document.getElementById("root")
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="skills" element={<Skills />} />
+    </Routes>
+  </BrowserRouter>
 );

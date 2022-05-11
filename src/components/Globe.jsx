@@ -11,18 +11,19 @@ export default function Scene() {
   });
 
   const myMesh = useRef();
+  const myLight = useRef();
   useFrame(() => {
-    myMesh.current.rotation.y += 0.0014;
+    myMesh.current.rotation.y += 0.001;
   });
   return (
     <>
-      <ambientLight intensity={0.4} />
-      <directionalLight castShadow position={[10, 10, 10]} intensity={0.8} />
+      <ambientLight intensity={0.15} />
+      <pointLight position={[-2.5, -0.6, 4]} intensity={1} ref={myLight} />
       <mesh scale={2.5} ref={myMesh} castShadow>
         <sphereGeometry args={[1.05, 100, 100]} />
         <meshStandardMaterial
           {...props}
-          displacementScale={0.02}
+          displacementScale={0.07}
           textureScale={0.02}
           roughness={1}
           attach="material"

@@ -1,0 +1,264 @@
+@import "helpers";
+
+$font-path: "../assets/fonts/";
+
+@font-face {
+  font-family: "Sequel Sans";
+  src: url("#{$font-path}/SequelSans/SequelSansBoldDisp.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Sequel Sans";
+  src: url("#{$font-path}/SequelSans/SequelSansLightDisp.ttf");
+  font-weight: 100;
+}
+
+@font-face{
+  
+}
+
+body{
+  width: 100vw;
+  margin: 0;
+}
+
+.home{
+  .canvas{
+    width:10vw !important;
+    height:10vw !important;
+  }
+  
+  body {
+    margin: 0px;
+  }
+  
+  #root {
+  }
+  
+  .container {
+    overflow: hidden;
+    height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .media-container{
+    display: flex;
+    width: 100vw;
+    height: 100%;
+  }
+  .frontpage-media{
+    height: fit-content;
+    margin-bottom: 8vh;
+    @media screen and (max-width: 1024px) and (orientation:portrait){
+      margin-bottom: 4vh;
+    }
+    position: absolute;
+    left: 10vw;
+    bottom: 2vh;
+    @media screen and (max-width: 1024px) and (orientation:portrait){
+      left: 12.5vw;
+      bottom: 5vh;
+    }
+    .canvas{
+      margin-left: 13vw;
+      width:10.5vw !important;
+      height:10.5vw !important;
+      @media screen and (max-width: 1024px) and (orientation:portrait){
+        margin-left: 34vw;
+        width:24vw !important;
+        height:24vw !important;
+      }
+    }
+    .images img{
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      width: 20vw;
+      @media screen and (max-width: 1024px) and (orientation:portrait){
+        width: 50vw;
+        max-height: inherit;
+      }
+    }
+    .images #tree{
+      width:9vw;
+      @media screen and (max-width: 1024px) and (orientation:portrait){
+        width: 22vw;
+      }
+      padding-left: 0.7vh;
+    }
+    .headings{
+      padding-left: 8.5vw;
+      @media screen and (max-width: 1024px) and (orientation:portrait){
+        padding-left: 18vw !important;
+        h1 {
+          font-size: 7vw !important;
+        }
+        h2 {    
+          font-size: 3.5vw !important;
+          letter-spacing: 0.7vw !important;
+          line-height: 1.5vw !important;
+        }
+      }
+      h1 {
+        font-family: "Sequel Sans";
+        font-weight: bold;
+        font-size: 2.5vw;
+        margin: 0px;
+      }
+      
+      h2 {
+        font-family: "Sequel Sans";
+        font-weight: 100;
+        font-size: 1.2vw;
+        letter-spacing: 0.3vw;
+        padding-left: 0.1vw;
+        line-height: 0.5vw;
+        margin: 0px;
+      }
+    }
+  }
+  
+  .link-container{
+    text-decoration: none;
+    height: fit-content;
+    width: 90vw;
+    font-size: 0.8vw;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10vw;
+    @media screen and (max-width: 1440px){
+      font-size: 1.1vw;
+    }
+    padding-top: 10vh;
+  
+    @media screen and (max-width: 1024px) and (orientation:portrait){
+      font-size: 2.8vw;
+    }
+    .links{
+      ul a {
+        text-decoration: none;
+        text-rendering:geometricPrecision;
+        color: black;
+      }
+      list-style-type: none;
+    }
+    ul:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.skills{
+  h1, h2, h3, p, a{
+    color: #24292f;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  }
+  h1{
+    font-size: 24px;
+  }
+  h2{
+    font-size: 18px;
+  }
+  h3{
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    header{
+      padding: 16px 4vw 16px 4vw;
+      display: flex;
+      width:92vw;
+      flex-direction: row;
+      hr{
+         background: rgb(199,199,199,1);
+        background: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(199,199,199,1) 25%, rgba(199,199,199,1) 50%, rgba(199,199,199,1) 75%, rgba(255,255,255,0) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(199,199,199,1) 25%, rgba(199,199,199,1) 50%, rgba(199,199,199,1) 75%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(199,199,199,1) 25%, rgba(199,199,199,1) 50%, rgba(199,199,199,1) 75%, rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1); 
+        width: 1.25px;
+        border: 0;
+        margin: 12px 0px 12px 18px;
+      }
+      .link-container li{
+        padding-left: 0px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        ul{
+          padding-left: 20px;
+        }
+        ul a{
+          color: black;
+          text-decoration: none;
+        }
+      }
+      a.logo{
+        align-self: center;
+        height: fit-content;
+        margin-right: 16px;
+        margin-top: 4px;
+        img {
+         width: 48px;
+        }
+      }
+      h1{
+        font-size: 22px;
+      }
+      a{
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    body{
+      background-color: #F0EDE8;
+      display: flex;
+      width:100vw;
+      height:100%;
+    }
+    footer{
+      .logo-footer{
+        display: flex;
+      }
+      img{
+        width: 32px;
+      }
+      padding: 32px 4vw 64px 4vw;
+      width: 92vw;
+      h3{
+        margin: 0.35vh 0.25vw;
+      }
+      p{
+        margin: 0.1vh 0vh;
+      }
+      .solid{
+        background: rgb(199,199,199,1);
+        background: -moz-linear-gradient(90deg, rgba(199,199,199,1) 0%, rgba(255,255,255,0) 25%);
+        background: -webkit-linear-gradient(90deg, rgba(199,199,199,1) 0%,rgba(255,255,255,0) 25%);
+        background: linear-gradient(90deg, rgba(199,199,199,1) 0%, rgba(255,255,255,0) 25%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1); 
+        border: 0;
+        margin: 12px 0px 12px 0px;
+        height:1px;
+        width: 100%;
+      }
+      .contact{
+        width: max-content;
+      }
+    }
+  }
+}
+
