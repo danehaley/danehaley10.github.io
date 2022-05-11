@@ -22,11 +22,12 @@ function Skills() {
           <hr class="solid" />
           <p>Copyright © 2022</p>
           <p>Created with React.js & SCSS</p>
-          <div className="contact">
-            <p>
-              Contact at <a>danehaley22@gmail.com</a>
-            </p>
-          </div>
+          <p>
+            Contact at{" "}
+            <a className="contact" href="mailto:danehaley22@gmail.com">
+              danehaley22@gmail.com
+            </a>
+          </p>
         </footer>
       </main>
     </div>

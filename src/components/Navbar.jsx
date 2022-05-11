@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import download from "../assets/img/file_download.svg";
 
 export default function Navbar(props) {
   return (
@@ -7,25 +8,30 @@ export default function Navbar(props) {
       <li className="links">
         {window.location.pathname !== "/" && (
           <ul>
-            <Link to="/">home</Link>
+            <Link to="/">Home</Link>
           </ul>
         )}
         <ul>
-          <Link to="/skills">skills</Link>
+          <Link to="/skills">Skills</Link>
         </ul>
         <ul>
-          <Link to="/projects">projects</Link>
+          <Link to="/projects">Projects</Link>
         </ul>
         <ul>
-          <Link to="/education">education</Link>
+          <Link to="/education">Education</Link>
         </ul>
+        <div className="spacer"></div>
         <ul>
-          <Link to="/documents/dane_dobra_resume.pdf" target="_blank">
-            resume
+          <Link
+            to="/documents/dane_dobra_resume.pdf"
+            target="_blank"
+            className="flex"
+          >
+            Resume
           </Link>
         </ul>
         <ul>
-          <a href="mailto:danehaley22@gmail.com">contact</a>
+          <a href="mailto:danehaley22@gmail.com">Contact</a>
         </ul>
       </li>
     </nav>
