@@ -13,7 +13,7 @@ function Home() {
         <Navbar />
         <div className="media-container">
           <div className="frontpage-media">
-            <Canvas className="canvas">
+            <Canvas className="canvas" shadows={true}>
               <Suspense fallback={null}>
                 <Scene />
               </Suspense>

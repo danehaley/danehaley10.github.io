@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import download from "../assets/img/file_download.svg";
 
 export default function Navbar(props) {
   return (

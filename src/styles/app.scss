@@ -14,16 +14,28 @@ $font-path: "../assets/fonts/";
   font-weight: 100;
 }
 
-@font-face{
-  
+html, body, div, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
 }
 
 body{
+  color: #F0EDE8;
   width: 100vw;
   margin: 0;
 }
 
 .home{
+  h1, h2, h3, p{
+    color: #24292f;
+  }
   .canvas{
     width:10vw !important;
     height:10vw !important;
@@ -155,7 +167,7 @@ body{
     font-size: 20px;
   }
   h2{
-    font-size: 18px;
+    font-size: 20px;
   }
   h3{
     font-size: 13px;
@@ -227,9 +239,80 @@ body{
     }
     body{
       background-color: #F0EDE8;
-      display: flex;
+      padding-bottom: 100px;
       width:100vw;
-      height:100%;
+      height: 100%;
+      @media screen and (max-width: 748px){
+        padding-bottom: 5vh;
+      }
+      .column-container{
+        display: flex;
+        width:80vw;
+        margin:4vw 10vw 2vw 10vw;
+        @media screen and (max-width: 1440px){
+          width:92vw;
+          margin:4vw 4vw 2vw 4vw;
+        }
+        @media screen and (max-width: 1000px){
+          -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+          width:80vw;
+          margin:4vw 10vw 2vw 10vw;
+        }
+        gap: 2vw;
+        justify-content: center;
+        .column{
+          display: flex;
+          flex-direction: column;
+          row-gap: 1vh;
+          width: 100%;
+          .heading{
+            width: 100%;
+            height: fit-content;
+            background:#FFEA46;
+            h2{
+              padding: 12px;
+              margin:0;
+              font-weight: 500;
+            }
+            .spacer{
+              height: 6vh;
+              width: 100%;
+            }
+          }
+          .body{
+            display: inline-block; // Stops child padding breaking out of body
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            .icon-wrapper{
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              padding: 5%;
+              gap: 5%;
+              .skill-icon{
+                img {
+                  height: auto;
+                  width: 100%;
+                }
+                p {
+                  height: auto;
+                  width: 100%;
+                }
+              }
+            }
+            .spacer{
+              height: 24vh;
+              width: 100%;
+              @media screen and (max-width: 1000px){
+                height: 10vh;
+              }
+            }
+          }
+        }
+      }
     }
     footer{
       .logo-footer{
@@ -238,7 +321,7 @@ body{
       img{
         width: 32px;
       }
-      padding: 16px 4vw 32px 4vw;
+      padding: 32px 4vw 64px 4vw;
       width: 92vw;
       h3{
         height: min-content;

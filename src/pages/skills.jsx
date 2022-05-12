@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Logo from "../assets/img/Skills/skills.svg";
 import { Link } from "react-router-dom";
+import SkillIcon from "../components/SkillIcon";
 function Skills() {
   return (
     <div className="skills">
@@ -13,7 +14,48 @@ function Skills() {
           <hr class="solid" />
           <Navbar />
         </header>
-        <body></body>
+        <body>
+          <div className="column-container">
+            <div className="column">
+              <div className="heading">
+                <div className="spacer"></div>
+                <h2>Languages</h2>
+              </div>
+              <div className="body">
+                <SkillIcon skill="Javascript" />
+                <SkillIcon skill="Python" />
+                <SkillIcon skill="CSharp" />
+                <SkillIcon skill="C" />
+                <div className="spacer"></div>
+              </div>
+            </div>
+            <div className="column">
+              <div className="heading">
+                <div className="spacer"></div>
+                <h2>Tools</h2>
+              </div>
+              <div className="body">
+                <div className="icon-wrapper">
+                  <SkillIcon skill="React" />
+                  <SkillIcon skill="Next" />
+                  <SkillIcon skill="Node" />
+                  <SkillIcon skill="Express" />
+                  <SkillIcon skill="Flask" />
+                </div>
+              </div>
+            </div>
+            <div className="column">
+              <div className="heading">
+                <div className="spacer"></div>
+                <h2>Miscellaneous</h2>
+              </div>
+              <div className="body">
+                <div className="spacer"></div>
+              </div>
+            </div>
+          </div>
+        </body>
+        <div className="spacer"></div>
         <footer>
           <div className="logo-footer">
             <img src={Logo} />
