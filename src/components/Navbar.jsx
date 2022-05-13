@@ -19,7 +19,6 @@ export default function Navbar(props) {
         <ul>
           <Link to="/education">Education</Link>
         </ul>
-        <div className="spacer"></div>
         <ul>
           <Link
             to="/documents/dane_dobra_resume.pdf"
