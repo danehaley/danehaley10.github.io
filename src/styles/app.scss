@@ -14,6 +14,12 @@ $font-path: "../assets/fonts/";
   font-weight: 100;
 }
 
+@font-face {
+  font-family: "Inconsolata";
+  src: url("#{$font-path}/Inconsolata/Inconsolata/Inconsolata-Regular.ttf");
+  font-weight: 300;
+}
+
 html, body, div, img {
   margin: 0;
   padding: 0;
@@ -22,20 +28,27 @@ html, body, div, img {
   font: inherit;
   vertical-align: baseline;
 }
+
+h1 {
+  font-family: "Sequel Sans";
+  font-weight: bold;
+  font-size: 2.5vw;
+  margin: 0px;
+}
+
 body {
   line-height: 1;
 }
 
 body{
-  color: #F0EDE8;
   width: 100vw;
   margin: 0;
 }
 
-.home{
   h1, h2, h3, p{
     color: #24292f;
   }
+
   .canvas{
     width:10vw !important;
     height:10vw !important;
@@ -44,9 +57,9 @@ body{
   .container {
     overflow: hidden;
     height: 100vh;
-    height: -webkit-fill-available;
     width: 100vw;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   
   .media-container{
@@ -107,12 +120,6 @@ body{
           line-height: 2.4vw !important;
         }
       }
-      h1 {
-        font-family: "Sequel Sans";
-        font-weight: bold;
-        font-size: 2.5vw;
-        margin: 0px;
-      }
       
       h2 {
         font-family: "Sequel Sans";
@@ -153,8 +160,158 @@ body{
     }
     ul:hover{
       cursor: pointer;
+      text-decoration: underline;
     }
   }
-}
 
+  .skill-wrapper{
+    width: fit-content;
+    max-width: 50%;
+    height: 100%;
+    padding-left: 10vw;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .sphere-heading-box{
+      display: flex;
+      flex-direction: row;
 
+      .sphere-text {
+        font-size: 12px;
+        p{font-family: Inconsolata;}
+        #edit-closed{
+        color: #c4c4c4;
+      }
+    }
+    
+      .sphere-text{
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        p{
+          height: 100%;
+        }
+        p:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        h1{
+          font-size: 2.5vw !important;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+        }
+        .spacer{
+          height:298%;
+        }
+        .heading{
+          display: flex;
+          h2{
+            font-family: "Sequel Sans";
+            padding-right: 10px;
+            font-weight: 300;
+            font-size: 1vw;
+            margin: 0px;
+          }
+        }
+      }
+    }
+    .skill-section{
+      h2 {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      hr{
+        background: rgb(199,199,199,1);
+        border: 0;
+        margin: 8px 0px 8px 0px;
+        height:1px;
+        width: 100%;
+      }
+      width: 100%;
+      min-height: 150px;
+      .skill-row{
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 20px;
+        .skill{
+          background-color: #E3E3E3;
+          border-radius: 100px;
+          margin: 5px 10px 5px 0px;
+          padding: 5px 10px;
+          h4 {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .edit-panel-box{
+      h1, h2, h3, h4, p, label, input{
+        font-family: Inconsolata;
+      }
+      .edit-property-wrapper{
+        margin-bottom: 14px;
+      }
+    }
+  }
+  input[type="range"].color {
+    -webkit-appearance: none;
+    margin-right: 15px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-image: linear-gradient(to right, black 0%, red 10%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+    background-repeat: no-repeat;
+  }
+  
+  input[type="range"] {
+    -webkit-appearance: none;
+    margin-right: 15px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-color: black;
+    background-repeat: no-repeat;
+  }
+  
+
+    input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: 11px;
+    transition: background .3s ease-in-out;
+    position: relative; 
+    display: block;  
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 7px solid black;
+    z-index: 1; 
+  }
+  
+  input[type=range].color::-webkit-slider-runnable-track  {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+  input[type="text"] {
+    -webkit-appearance: none;
+    border-color: #eee;
+    border-style: solid;
+    border-width: 0.1px;
+    color: gray;
+    width: 129px;
+    margin-right: 15px;
+  }
+  input[type="text"]:focus {
+    border-color: black;
+    color: black;
+  }

@@ -10,15 +10,19 @@ export default function Navbar(props) {
             <Link to="/">Home</Link>
           </ul>
         )}
-        <ul>
-          <Link to="/skills">Skills</Link>
-        </ul>
-        <ul>
-          <Link to="/projects">Projects</Link>
-        </ul>
+        {window.location.pathname !== "/skills" && (
+          <ul>
+            <Link to="/skills">Skills</Link>
+          </ul>
+        )}
         <ul>
           <Link to="/education">Education</Link>
         </ul>
+        {window.location.pathname !== "/projects" && (
+          <ul>
+            <Link to="/projects">Projects</Link>
+          </ul>
+        )}
         <ul>
           <Link
             to="/documents/dane_dobra_resume.pdf"
