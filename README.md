@@ -9,7 +9,7 @@ The homepage of the website contains decorative media, as well as a link navigat
 
 ## Skills
 The skills page of the website has a dynamic list of my skills categorized via "Languages", "Tools", and "Miscellaneous". 
-![Skills page from the website](src/markdown/homepage-markdown.gif)
+![Skills page from the website](src/markdown/skills-markdown.gif)
 ## Projects
 
 ## Education
