@@ -20,6 +20,10 @@ $font-path: "../assets/fonts/";
   font-weight: 300;
 }
 
+html{
+  background-color:white;
+}
+
 html, body, div, img {
   margin: 0;
   padding: 0;
@@ -260,6 +264,32 @@ body{
       }
     }
   }
+
+.footer{
+  list-style: none;
+  li{ display: flex;    text-decoration: none;
+    height: fit-content;
+    width: 98%;
+    font-size: 0.8vw;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10vw;
+    ul{
+    padding-left: 0px;
+      a {
+        text-decoration: none;
+        text-rendering:geometricPrecision;
+        color: rgba(0,0,0,.5);
+      }
+    }
+  }
+  hr{
+    width: fit-content;
+    margin: 10px 10px;
+  }
+}
+
   input[type="range"].color {
     -webkit-appearance: none;
     margin-right: 15px;

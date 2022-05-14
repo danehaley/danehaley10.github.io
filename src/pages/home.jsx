@@ -5,6 +5,7 @@ import Scene from "../components/Globe";
 import { Canvas } from "@react-three/fiber";
 import "../styles/app.scss";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -28,6 +29,7 @@ function Home() {
             </div>
           </div>
         </div>
+        <Footer />
       </main>
     </div>
   );

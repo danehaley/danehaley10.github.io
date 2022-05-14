@@ -23,18 +23,6 @@ export default function Navbar(props) {
             <Link to="/projects">Projects</Link>
           </ul>
         )}
-        <ul>
-          <Link
-            to="/documents/dane_dobra_resume.pdf"
-            target="_blank"
-            className="flex"
-          >
-            Resume
-          </Link>
-        </ul>
-        <ul>
-          <a href="mailto:danehaley22@gmail.com">Contact</a>
-        </ul>
       </li>
     </nav>
   );
