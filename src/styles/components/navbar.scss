@@ -1,0 +1,27 @@
+.navbar {
+  text-decoration: none;
+  height: fit-content;
+  width: 90vw;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10vw;
+  margin-top: 10vh;
+
+  &-list {
+    list-style-type: none;
+    display: flex;
+
+    ul a {
+      text-decoration: none;
+      text-rendering: geometricPrecision;
+      color: black;
+      font-size: var(--fs-base);
+    }
+
+    ul a:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

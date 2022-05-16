@@ -1,0 +1,111 @@
+@use "utilities";
+@use "components";
+
+:root {
+  // Font sizes
+  --fs-xxxl: 4rem;
+  --fs-xxl: clamp(2rem, 2.5vw, 5rem);
+  --fs-xl: 2rem;
+  --fs-lg: 1.2rem;
+  --fs-md: 1rem;
+  --fs-base: 0.75rem;
+  --fs-sm: 0.5rem;
+}
+
+@media (min-width: 40em) {
+  :root {
+    --fs-xxxl: calc(5rem * 1.25);
+    --fs-xl: calc(2.5rem * 1.25);
+    --fs-lg: calc(2rem * 1.25);
+    --fs-md: calc(1.25rem * 1.25);
+    --fs-base: calc(1rem * 1.25);
+    --fs-sm: calc(0.75rem * 1.25);
+  }
+}
+
+@media (max-width: 40em) {
+  .navbar {
+    margin-top: 5vh;
+    justify-content: center;
+  }
+  .media {
+    left: 8vw !important;
+    bottom: 0vh !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Sequel Sans";
+}
+
+.container {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.media {
+  height: fit-content;
+  margin-bottom: 8vh;
+  position: absolute;
+  left: 10vw;
+  bottom: 2vh;
+
+  &-images {
+    &__puppy {
+      width: clamp(12rem, 20vw, 30rem);
+    }
+
+    &__tree {
+      width: clamp(6rem, 10vw, 15rem);
+      padding-left: 0.7vh;
+    }
+  }
+
+  &-3dMoon {
+    margin-left: clamp(5rem, 10vw, 16rem);
+    width: clamp(8rem, 12vw, 16rem) !important;
+    height: clamp(8rem, 12vw, 16rem) !important;
+  }
+
+  &-headings {
+    margin-left: clamp(3rem, 8vw, 12rem);
+    &__smallboy {
+      font-weight: 100;
+      font-size: calc(var(--fs-xxl) / 2.25);
+      letter-spacing: calc(var(--fs-xxl) / 7.25);
+      line-height: 0.75rem;
+      margin: 0;
+      padding-left: 0.15rem;
+    }
+    &__bigboy {
+      font-weight: bold;
+      font-size: var(--fs-xxl);
+      margin: 0;
+    }
+  }
+}

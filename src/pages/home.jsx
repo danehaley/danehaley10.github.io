@@ -3,35 +3,30 @@ import tree from "../assets/img/Welcome/tree.png";
 import { Suspense } from "react";
 import Scene from "../components/Globe";
 import { Canvas } from "@react-three/fiber";
-import "../styles/app.scss";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <div className="home">
-      <main className="container">
-        <Navbar />
-        <div className="media-container">
-          <div className="frontpage-media">
-            <Canvas className="canvas" shadows={true}>
-              <Suspense fallback={null}>
-                <Scene />
-              </Suspense>
-            </Canvas>
-            <div className="images">
-              <img id="puppy" src={puppy} alt="A puppy." />
-              <img id="tree" src={tree} alt="A tree drawing." />
-            </div>
-            <div className="headings">
-              <h1>Dane Haley</h1>
-              <h2>Web Developer</h2>
-            </div>
-          </div>
+    <main className="container">
+      <Navbar />
+      <div className="media">
+        <Canvas className="media-3dMoon" shadows={true}>
+          <Suspense fallback={null}>
+            <Scene />
+          </Suspense>
+        </Canvas>
+        <div className="media-images">
+          <img class="media-images__puppy" src={puppy} alt="A puppy." />
+          <img class="media-images__tree" src={tree} alt="A tree drawing." />
         </div>
-        <Footer />
-      </main>
-    </div>
+        <div className="media-headings">
+          <h1 className="media-headings__bigboy">Dane Haley</h1>
+          <h2 className="media-headings__smallboy">Web Developer</h2>
+        </div>
+      </div>
+      {/* <Footer /> */}
+    </main>
   );
 }
 

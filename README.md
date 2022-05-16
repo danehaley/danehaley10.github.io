@@ -13,5 +13,3 @@ The skills page of the website has a dynamic list of my skills categorized via "
 ## Projects
 
 ## Education
-
-## Resume

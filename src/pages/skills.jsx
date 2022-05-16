@@ -1,9 +1,9 @@
-import "../styles/app.scss";
 import Navbar from "../components/Navbar";
 import { TextSphere } from "../components/Globe";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { useState, React } from "react";
+import React, { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 
 function Skills() {
   const [editPanel, setEditPanel] = useState(false);
@@ -15,13 +15,24 @@ function Skills() {
     sphereColor: "default",
   });
 
-  const fontProps = {
-    font: "/Inter-Bold.woff",
-    fontSize: 1,
-    letterSpacing: -0.05,
-    lineHeight: 1,
-    "material-toneMapped": false,
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight,
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight,
+    });
   };
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
 
   const EditPanel = () => {
     const handler = (event) => {
@@ -52,7 +63,8 @@ function Skills() {
             max="62"
           />
           <label for="sphereArgW">
-            {textSphereState.sphereArgW} width segments
+            {textSphereState.sphereArgW}{" "}
+            {screenSize.dynamicWidth > 448 ? "width segments" : "w seg"}
           </label>
         </div>
         <div className="edit-property-wrapper">
@@ -65,7 +77,8 @@ function Skills() {
             max="62"
           />
           <label for="sphereArgH">
-            {textSphereState.sphereArgH} height segments
+            {textSphereState.sphereArgH}{" "}
+            {screenSize.dynamicWidth > 448 ? "height segments" : "h seg"}
           </label>
         </div>
         <div className="edit-property-wrapper">
@@ -78,7 +91,9 @@ function Skills() {
             min="-1"
             max="360"
           />
-          <label for="sphereColor">sphere color</label>
+          <label for="sphereColor">
+            {screenSize.dynamicWidth > 448 ? "sphere color" : "ball"}
+          </label>
         </div>
         <div className="edit-property-wrapper">
           <input
@@ -90,7 +105,9 @@ function Skills() {
             min="-1"
             max="360"
           />
-          <label for="sphereColor">text color</label>
+          <label for="sphereColor">
+            {screenSize.dynamicWidth > 448 ? "text color" : "text"}
+          </label>
         </div>
       </div>
     );
@@ -147,16 +164,16 @@ function Skills() {
             <h2>Languages</h2>
             <hr></hr>
             <div className="skill-row">
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Javascript</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Python</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>C#</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>C</h4>
               </div>
             </div>
@@ -165,25 +182,28 @@ function Skills() {
             <h2>Tools</h2>
             <hr></hr>
             <div className="skill-row">
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>HTML/CSS</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>React.js</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Next.js</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Node.js</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Express.js</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Flask</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
+                <h4>Prisma</h4>
+              </div>
+              <div className="skill-tag">
                 <h4>SQL</h4>
               </div>
             </div>
@@ -192,30 +212,38 @@ function Skills() {
             <h2>Miscellaneous</h2>
             <hr></hr>
             <div className="skill-row">
-              <div className="skill">
-                <h4>Amazon Web Services (AWS)</h4>
+              <div className="skill-tag">
+                <h4>
+                  {screenSize.dynamicWidth < 448
+                    ? "AWS"
+                    : "Amazon Web Services (AWS)"}
+                </h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Postman</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Docker</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Linux CLI</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
+                <h4>Git</h4>
+              </div>
+              <div className="skill-tag">
                 <h4>Figma</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Adobe Photoshop</h4>
               </div>
-              <div className="skill">
+              <div className="skill-tag">
                 <h4>Adobe Illustrator</h4>
               </div>
             </div>
           </div>
         </div>
+        <Footer />
       </main>
     </div>
   );
