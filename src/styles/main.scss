@@ -196,8 +196,8 @@ a {
     justify-self: start;
 
     &__canvas {
-      width: clamp(9rem, 20vw, 16rem) !important;
-      height: clamp(9rem, 15vw, 16rem) !important;
+      width: clamp(9rem, 12.5vw, 16rem) !important;
+      height: clamp(9rem, 12.5vw, 16rem) !important;
     }
 
     &-text {
