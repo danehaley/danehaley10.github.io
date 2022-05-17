@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
-    <nav className="navbar">
-      <li className="navbar-list">
-        <ul>
+    <nav className="header">
+      <ul className="header-list">
+        <li className="header-list__item">
           <Link to="/">Home</Link>
-        </ul>
-        <ul>
+        </li>
+        <li className="header-list__item">
           <Link to="/skills">Skills</Link>
-        </ul>
-        <ul>
+        </li>
+        <li className="header-list__item">
           <Link to="/education">Education</Link>
-        </ul>
-        <ul>
+        </li>
+        <li className="header-list__item">
           <Link to="/projects">Projects</Link>
-        </ul>
-      </li>
+        </li>
+      </ul>
     </nav>
   );
 }

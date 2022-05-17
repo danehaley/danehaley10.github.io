@@ -3,22 +3,26 @@ import { TextSphere } from "../components/Globe";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import React, { useState, useEffect } from "react";
+import SkillTag from "../components/SkillTag.jsx";
+import SphereEditPanel from "../components/Editor.jsx";
 import Footer from "../components/Footer";
 
 function Skills() {
   const [editPanel, setEditPanel] = useState(false);
-  const [textSphereState, setTextSphereState] = useState({
-    textString: "Hello world!",
-    textColor: "default",
-    sphereArgW: 16,
-    sphereArgH: 16,
-    sphereColor: "default",
-  });
 
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
     dynamicHeight: window.innerHeight,
   });
+
+  const [sphereProperties, setSphereProperties] = useState({
+    textString: "Hello World!",
+    textColor: "-1",
+    sphereColor: "-1",
+    sphereArgW: 16,
+    sphereArgH: 16,
+  });
+
   const setDimension = () => {
     getDimension({
       dynamicWidth: window.innerWidth,
@@ -27,6 +31,7 @@ function Skills() {
   };
 
   useEffect(() => {
+    console.log(sphereProperties.textColor);
     window.addEventListener("resize", setDimension);
 
     return () => {
@@ -34,218 +39,123 @@ function Skills() {
     };
   }, [screenSize]);
 
-  const EditPanel = () => {
-    const handler = (event) => {
-      console.log(event.target.name);
-      setTextSphereState({
-        ...textSphereState,
-        [event.target.name]: event.target.value,
-      });
-    };
-    return (
-      <div className="edit-panel-box">
-        <div className="edit-property-wrapper">
-          <input
-            type="text"
-            name="textString"
-            value={textSphereState.textString}
-            onChange={handler}
-          />
-          <label for="sphereArgW">text</label>
-        </div>
-        <div className="edit-property-wrapper">
-          <input
-            type="range"
-            name="sphereArgW"
-            value={textSphereState.sphereArgW}
-            onChange={handler}
-            min="0"
-            max="62"
-          />
-          <label for="sphereArgW">
-            {textSphereState.sphereArgW}{" "}
-            {screenSize.dynamicWidth > 448 ? "width segments" : "w seg"}
-          </label>
-        </div>
-        <div className="edit-property-wrapper">
-          <input
-            type="range"
-            name="sphereArgH"
-            value={textSphereState.sphereArgH}
-            onChange={handler}
-            min="0"
-            max="62"
-          />
-          <label for="sphereArgH">
-            {textSphereState.sphereArgH}{" "}
-            {screenSize.dynamicWidth > 448 ? "height segments" : "h seg"}
-          </label>
-        </div>
-        <div className="edit-property-wrapper">
-          <input
-            className="color"
-            type="range"
-            name="sphereColor"
-            value={textSphereState.sphereColor}
-            onChange={handler}
-            min="-1"
-            max="360"
-          />
-          <label for="sphereColor">
-            {screenSize.dynamicWidth > 448 ? "sphere color" : "ball"}
-          </label>
-        </div>
-        <div className="edit-property-wrapper">
-          <input
-            className="color"
-            type="range"
-            name="textColor"
-            value={textSphereState.textColor}
-            onChange={handler}
-            min="-1"
-            max="360"
-          />
-          <label for="sphereColor">
-            {screenSize.dynamicWidth > 448 ? "text color" : "text"}
-          </label>
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <div className="home">
-      <main className="container">
-        <Navbar />
-        <div className="skill-wrapper">
-          <div className="sphere-heading-box">
-            <Canvas className="canvas" shadows={true}>
+    <main className="container">
+      <Navbar />
+      <div className="skills-flex-container">
+        <div className="skills-content-wrapper">
+          <div className="skills-header">
+            <Canvas className="skills-header__canvas" shadows={true}>
               <Suspense fallback={null}>
                 <TextSphere
-                  text={textSphereState.textString}
+                  text={sphereProperties.textString}
                   colors={{
-                    text: textSphereState.textColor,
-                    wireframe: textSphereState.sphereColor,
+                    text: sphereProperties.textColor,
+                    wireframe: sphereProperties.sphereColor,
                   }}
                   args={[
                     1.05,
-                    textSphereState.sphereArgW,
-                    textSphereState.sphereArgH,
+                    sphereProperties.sphereArgW,
+                    sphereProperties.sphereArgH,
                   ]}
                 />
               </Suspense>
             </Canvas>
-            <div className="sphere-text">
+            <div className="skills-header-text">
               {!editPanel && (
                 <p
-                  class="edit"
-                  id="edit-closed"
+                  class="skills-header-text__toggle skills-header-text__toggle--closed"
                   onClick={() => setEditPanel(true)}
                 >
                   + edit
                 </p>
               )}
               {editPanel && (
-                <p class="edit" onClick={() => setEditPanel(false)}>
+                <p
+                  class="skills-header-text__toggle skills-header-text__toggle--opened"
+                  onClick={() => setEditPanel(false)}
+                >
                   - close
                 </p>
               )}
-              {editPanel && EditPanel()}
-              {editPanel && <div className="spacer"></div>}
+              {editPanel && (
+                <SphereEditPanel
+                  state={sphereProperties}
+                  setState={setSphereProperties}
+                  screenWidth={screenSize.dynamicWidth}
+                />
+              )}
+              {editPanel && <div className="skills-header-text__spacer"></div>}
               {!editPanel && (
-                <div class="heading">
-                  <h2>{"</>"}</h2>
-                  <h1>Skills</h1>
+                <div class="skills-header-text__title">
+                  <h1 className="skills-header-text__title--big">Skills</h1>
                 </div>
               )}
             </div>
           </div>
-          <div className="skill-section">
-            <h2>Languages</h2>
-            <hr></hr>
-            <div className="skill-row">
-              <div className="skill-tag">
-                <h4>Javascript</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Python</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>C#</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>C</h4>
-              </div>
+          <div className="skills-section">
+            <h2 className="skills-section__title">Languages</h2>
+            <hr className="skills-section__divider"></hr>
+            <div className="skills-section-row">
+              <SkillTag text="Javascript" />
+              <SkillTag text="Python" />
+              <SkillTag text="C#" />
+              <SkillTag text="C" />
             </div>
           </div>
-          <div className="skill-section">
-            <h2>Tools</h2>
-            <hr></hr>
-            <div className="skill-row">
-              <div className="skill-tag">
-                <h4>HTML/CSS</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>React.js</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Next.js</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Node.js</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Express.js</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Flask</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Prisma</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>SQL</h4>
-              </div>
+          <div className="skills-section">
+            <h2 className="skills-section__title">Tools</h2>
+            <hr className="skills-section__divider"></hr>
+            <div className="skills-section-row">
+              <SkillTag text="HTML/CSS" />
+              <SkillTag text="React.js" />
+              <SkillTag text="Next.js" />
+              <SkillTag text="Node.js" />
+              <SkillTag text="Express.js" />
+              <SkillTag text="Flask" />
+              <SkillTag text="Prisma" />
+              <SkillTag text="SQL" />
             </div>
           </div>
-          <div className="skill-section">
-            <h2>Miscellaneous</h2>
-            <hr></hr>
-            <div className="skill-row">
-              <div className="skill-tag">
-                <h4>
-                  {screenSize.dynamicWidth < 448
-                    ? "AWS"
-                    : "Amazon Web Services (AWS)"}
-                </h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Postman</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Docker</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Linux CLI</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Git</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Figma</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Adobe Photoshop</h4>
-              </div>
-              <div className="skill-tag">
-                <h4>Adobe Illustrator</h4>
-              </div>
+          <div className="skills-section">
+            <h2 className="skills-section__title">Miscellaneous</h2>
+            <hr className="skills-section__divider"></hr>
+            <div className="skills-section-row">
+              <SkillTag
+                text="Amazon Web Services (AWS)"
+                altText={{
+                  altText: "AWS",
+                  thresholdWidth: 448,
+                  currentWidth: screenSize.dynamicWidth,
+                }}
+              />
+              <SkillTag text="Postman" />
+              <SkillTag text="Docker" />
+              <SkillTag text="Linux CLI" />
+              <SkillTag text="Git" />
+              <SkillTag text="Figma" />
+              <SkillTag
+                text="Adobe Photoshop"
+                altText={{
+                  altText: "Photoshop",
+                  thresholdWidth: 448,
+                  currentWidth: screenSize.dynamicWidth,
+                }}
+              />
+              <SkillTag
+                text="Adobe Illustrator"
+                altText={{
+                  altText: "Illustrator",
+                  thresholdWidth: 448,
+                  currentWidth: screenSize.dynamicWidth,
+                }}
+              />
             </div>
           </div>
         </div>
-        <Footer />
-      </main>
-    </div>
+      </div>
+      <Footer />
+    </main>
   );
 }
 

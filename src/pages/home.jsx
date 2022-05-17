@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <main className="container">
+    <main className="home container">
       <Navbar />
       <div className="media">
         <Canvas className="media-3dMoon" shadows={true}>
@@ -25,7 +25,7 @@ function Home() {
           <h2 className="media-headings__smallboy">Web Developer</h2>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }

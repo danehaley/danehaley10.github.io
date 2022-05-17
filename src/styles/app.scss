@@ -1,241 +1,32 @@
-@import "helpers";
-@import "fonts";
-@import "sliders";
+@use "utilities";
+@use "components";
 
-h1 {
-  font-family: "Sequel Sans";
-  font-weight: bold;
-  font-size: var(--fs-xl);
-  margin: 0px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  // Removes stupid & ugly React focus border
+  outline: none;
 }
 
 h1,
 h2,
 h3,
 h4,
-p {
-  color: #24292f;
+p,
+a {
+  color: utilities.$text;
 }
 
-.container {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.media-container {
-  display: flex;
-  width: 100vw;
-  height: 100%;
-}
-
-.frontpage-media {
-  height: fit-content;
-  margin-bottom: 8vh;
-  position: absolute;
-  left: 10vw;
-  bottom: 2vh;
-}
-
-.images img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  width: 20vw;
-}
-
-.images #tree {
-  width: 9vw;
-  padding-left: 0.7vh;
-}
-
-.headings {
-  padding-left: 8.5vw;
-}
-
-.canvas {
-  margin-left: 13vw;
-  width: 10.5vw !important;
-  height: 10.5vw !important;
-}
-
-.link-container {
-  text-decoration: none;
-  height: fit-content;
-  width: 90vw;
-  font-size: 0.8vw;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10vw;
-}
-
-li.links-list {
-  list-style-type: none;
-  ul a {
-    text-decoration: none;
-    color: black;
+.media {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  &-3dmoon {
+    max-width: 1rem;
+    max-height: 1rem;
   }
-
-  ul:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-}
-
-.skill-wrapper {
-  width: fit-content;
-  max-width: 50%;
-  height: 100%;
-  padding-left: 10vw;
-  padding-bottom: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  @media screen and (max-width: 1025px) {
-    max-width: 80%;
-  }
-
-  .sphere-heading-box {
-    display: flex;
-    flex-direction: row;
-
-    .sphere-text {
-      display: flex;
-      flex-direction: column;
-      width: 75%;
-
-      p {
-        height: 100%;
-      }
-
-      p:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-      h1 {
-        font-size: 2.5vw !important;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: center;
-      }
-    }
-  }
-
-  .spacer {
-    height: 298%;
-  }
-
-  .sphere-text {
-    font-size: 12px;
-
-    p {
-      font-family: Inconsolata;
-    }
-
-    #edit-closed {
-      color: #c4c4c4;
-    }
-  }
-
-  .skill-section {
-    h2 {
-      font-family: Helvetica, Arial, sans-serif;
-      font-weight: bold;
-      font-size: 1vw;
-    }
-
-    hr {
-      background: rgb(199, 199, 199, 1);
-      border: 0;
-      margin: 8px 0px 8px 0px;
-      height: 1px;
-      width: 100%;
-    }
-
-    width: 100%;
-    min-height: 150px;
-
-    .skill-row {
-      display: flex;
-      flex-wrap: wrap;
-      padding-right: 20px;
-
-      .skill {
-        background-color: #e3e3e3;
-        border-radius: 100px;
-        margin: 5px 10px 5px 0px;
-        padding: 5px 10px;
-
-        h4 {
-          margin: 0;
-          font-family: Helvetica, Arial, sans-serif;
-          font-weight: normal;
-          font-size: 16px;
-
-          @media screen and (max-width: 1025px) {
-            font-size: 2.6vw;
-          }
-        }
-      }
-    }
-  }
-
-  .edit-panel-box {
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    label,
-    input {
-      font-family: Inconsolata;
-    }
-
-    .edit-property-wrapper {
-      margin-bottom: 14px;
-
-      @media screen and (max-width: 1024px) and (orientation: portrait) {
-        input {
-          width: 25vw;
-        }
-      }
-    }
-  }
-}
-
-.footer {
-  list-style: none;
-
-  li {
-    display: flex;
-    text-decoration: none;
-    height: fit-content;
-    width: 98%;
-    font-size: 14px;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10vw;
-
-    ul {
-      padding-left: 0px;
-
-      a {
-        text-decoration: none;
-        text-rendering: geometricPrecision;
-        color: rgba(0, 0, 0, 0.5);
-      }
-    }
-  }
-
-  hr {
-    width: fit-content;
-    margin: 10px 10px;
+  &-image {
+    max-width: 20rem;
   }
 }
