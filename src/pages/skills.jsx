@@ -8,19 +8,9 @@ import SphereEditPanel from "../components/Editor.jsx";
 import Footer from "../components/Footer";
 
 function Skills() {
-  const [editPanel, setEditPanel] = useState(false);
-
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
     dynamicHeight: window.innerHeight,
-  });
-
-  const [sphereProperties, setSphereProperties] = useState({
-    textString: "Hello World!",
-    textColor: "-1",
-    sphereColor: "-1",
-    sphereArgW: 16,
-    sphereArgH: 16,
   });
 
   const setDimension = () => {
@@ -31,13 +21,22 @@ function Skills() {
   };
 
   useEffect(() => {
-    console.log(sphereProperties.textColor);
     window.addEventListener("resize", setDimension);
 
     return () => {
       window.removeEventListener("resize", setDimension);
     };
   }, [screenSize]);
+
+  const [editPanel, setEditPanel] = useState(false);
+
+  const [sphereProperties, setSphereProperties] = useState({
+    textString: "Hello World!",
+    textColor: "-1",
+    sphereColor: "-1",
+    sphereArgW: 16,
+    sphereArgH: 16,
+  });
 
   return (
     <main className="container">
