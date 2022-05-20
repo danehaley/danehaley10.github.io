@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fc364cf5.css",
-    "main.js": "/static/js/main.5352cca3.js",
+    "main.js": "/static/js/main.1ed23cd1.js",
     "static/media/pawler-logoonly-brandcolor.png": "/static/media/pawler-logoonly-brandcolor.55a41cc7fdde2761c174.png",
     "static/media/IntroductionIcon.svg": "/static/media/IntroductionIcon.0a4b147098bdb0765b930da219bdb896.svg",
     "static/media/ToolsIcon.svg": "/static/media/ToolsIcon.45de54d2944da5eefae2b4b7ba13dcab.svg",
@@ -11,10 +11,10 @@
     "static/media/SlideIndictatorRounded.svg": "/static/media/SlideIndictatorRounded.715efe4a2a9f602c2a07f20431e109b2.svg",
     "static/media/Ball.svg": "/static/media/Ball.9fd3ef3e1d8e3bc0c9deda1005adc066.svg",
     "main.fc364cf5.css.map": "/static/css/main.fc364cf5.css.map",
-    "main.5352cca3.js.map": "/static/js/main.5352cca3.js.map"
+    "main.1ed23cd1.js.map": "/static/js/main.1ed23cd1.js.map"
   },
   "entrypoints": [
     "static/css/main.fc364cf5.css",
-    "static/js/main.5352cca3.js"
+    "static/js/main.1ed23cd1.js"
   ]
 }
