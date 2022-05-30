@@ -1,0 +1,13 @@
+$font-path: "../fonts"; // not double ".." as this is used in app.scss
+
+@font-face {
+  font-family: "Sequel Sans";
+  src: url("#{$font-path}/SequelSansBoldDisp.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Sequel Sans";
+  src: url("#{$font-path}/SequelSansLightDisp.ttf");
+  font-weight: 100;
+}

@@ -1,0 +1,14 @@
+html {
+    box-sizing: border-box; // Counters borders & padding into objects width & height
+    font-size: 100%; // Ensures font size is at 16px by default
+}
+
+*, *::before, *::after{
+    box-sizing: inherit; // Inherit border-box from html element
+}
+
+body, h1, h2, h3, p{
+    // Reset browser values
+    margin: 0;
+    padding: 0;
+}
